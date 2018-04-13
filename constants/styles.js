@@ -9,6 +9,9 @@ export const colors = {
   overlay: 'rgba(59,72,89,0.8)',
   separator: 'rgb(232,240,245)',
   shadow: 'rgb(7,192,149)',
+  gray: 'rgb(250,251,252)',
+  red: 'rgb(230,103,116)',
+  fadedRed: 'rgb(255,241,241)',
   //nested objects eg: colors.dark.text
   dark: {
     text: 'rgb(59,72,89)',
@@ -23,7 +26,7 @@ export const fontSizes = {
   'lg'      : 18,
   'x-lg'    : 20,
   'xx-lg'   : 24,
-  'xxx-lg'  : 30  
+  'xxx-lg'  : 30
 }
 
 export const sizes = {

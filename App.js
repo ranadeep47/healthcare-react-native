@@ -37,7 +37,7 @@ export default class App extends React.Component {
   _loadResourcesAsync = async () => {
     return Promise.all([
       Asset.loadAsync([
-        // require('./assets/images/robot-dev.png'),
+        require('./assets/images/MobileRegistration.png'),
       ]),
       Font.loadAsync({
         'circularstd-book': require('./assets/fonts/circularstd-book-webfont.ttf'),

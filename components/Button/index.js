@@ -14,11 +14,12 @@ const Button = (props) => {
   let size = props.size || 'md';
   let textStyles = {
     color: background === 'transparent' ? colors.blue : colors.white,
-    fontSize: fontSizes[size]
+    fontSize: fontSizes[size],
+    textAlign: 'center'
   }
 
   return (
-    <TouchableOpacity style={[styles.button, {backgroundColor: background}, styles[size]]} onPress={props.onPress}>
+    <TouchableOpacity style={[styles.button, {backgroundColor: background}, styles[size], props.style]} onPress={props.onPress}>
       <Text style={textStyles}>{props.children}</Text>
     </TouchableOpacity>
   )
@@ -27,11 +28,6 @@ const Button = (props) => {
 const styles = StyleSheet.create({
 
   button: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginHorizontal: 20,
     borderRadius: 4
   },
 
@@ -42,13 +38,12 @@ const styles = StyleSheet.create({
 
   md: {
     paddingHorizontal: 30,
-    paddingVertical: 24,    
+    paddingVertical: 22,
   },
 
   lg: {
     paddingHorizontal: 40,
-    paddingVertical: 28,
-    marginHorizontal: 40
+    paddingVertical: 24,
   },
 
 })

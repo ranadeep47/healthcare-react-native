@@ -32,18 +32,18 @@ const styles = StyleSheet.create({
   },
 
   sm: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
   },
 
   md: {
-    paddingHorizontal: 30,
-    paddingVertical: 22,
+    paddingHorizontal: 24,
+    paddingVertical: 12,
   },
 
   lg: {
-    paddingHorizontal: 40,
-    paddingVertical: 24,
+    paddingHorizontal: 32,
+    paddingVertical: 16,
   },
 
 })

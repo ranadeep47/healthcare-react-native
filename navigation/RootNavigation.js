@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 
 import PhoneVerification from '../screens/PhoneVerification';
 import Countries from '../screens/Countries';
+import SignUp from '../screens/SignUp';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -12,11 +13,14 @@ const RootStackNavigator = StackNavigator(
     },
     Countries: {
       screen: Countries
+    },
+    SignUp: {
+      screen: SignUp
     }
   },
   {
     //TODO: can set initialRouteName and other options
-    initialRouteName: 'Countries',
+    initialRouteName: 'SignUp',
     navigationOptions: () => ({
 
     }),

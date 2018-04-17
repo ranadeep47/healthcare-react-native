@@ -11,6 +11,8 @@ import Dropdown from '../components/Dropdown'
 import TextField from '../components/TextField'
 import Button from '../components/Button'
 
+import RangeSlider from '../components/RangeSlider'
+
 export default class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -51,6 +53,7 @@ export default class SignUp extends React.Component {
             <Text style={styles['label']}>RESIDENTIAL ADDRESS</Text>
             <TextField placeholder='Enter your address'></TextField>
           </View>
+          <RangeSlider />
         </View>
         <View>
           <LinearGradient
@@ -65,7 +68,7 @@ export default class SignUp extends React.Component {
   }
 
 }
-
+//<Close style={{...StyleSheet.absoluteFillObject, top: 12, left: 12}}/>
 const styles = StyleSheet.create({
   container: {
 

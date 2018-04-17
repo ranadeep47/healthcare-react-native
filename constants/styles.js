@@ -7,10 +7,12 @@ export const colors = {
   greenBlue: 'rgb(0,210,131)',
   green: 'rgb(7,206,135)',
   blue: 'rgb(6,179,162)',
+  lightBlue: 'rgba(6,179,162,0.3)',
   overlay: 'rgba(59,72,89,0.8)',
   separator: 'rgb(232,240,245)',
   shadow: 'rgb(7,192,149)',
   gray: 'rgb(250,251,252)',
+  lightGray: 'rgba(111,123,135,0.2)',
   red: 'rgb(230,103,116)',
   fadedRed: 'rgb(255,241,241)',
   //nested objects eg: colors.dark.text

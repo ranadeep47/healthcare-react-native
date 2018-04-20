@@ -19,7 +19,14 @@ const Button = (props) => {
   }
 
   return (
-    <TouchableOpacity style={[styles.button, {backgroundColor: background}, styles[size], props.style]} onPress={props.onPress}>
+    <TouchableOpacity
+      style={[
+        styles.button,
+        {backgroundColor: background},
+        styles[size],
+        props.style,
+        props.background === 'transparent' ? {borderWidth: 2, borderColor: colors.blue} : null]} 
+      onPress={props.onPress}>
       <Text style={textStyles}>{props.children}</Text>
     </TouchableOpacity>
   )

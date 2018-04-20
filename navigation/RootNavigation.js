@@ -5,6 +5,7 @@ import { StackNavigator } from 'react-navigation';
 import PhoneVerification from '../screens/PhoneVerification';
 import Countries from '../screens/Countries';
 import SignUp from '../screens/SignUp';
+import UploadCertificates from '../screens/UploadCertificates';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -16,11 +17,14 @@ const RootStackNavigator = StackNavigator(
     },
     SignUp: {
       screen: SignUp
+    },
+    UploadCertificates: {
+      screen: UploadCertificates
     }
   },
   {
     //TODO: can set initialRouteName and other options
-    initialRouteName: 'SignUp',
+    initialRouteName: 'UploadCertificates',
     navigationOptions: () => ({
 
     }),

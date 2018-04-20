@@ -9,7 +9,7 @@ import { colors, fontSizes } from '../../constants/styles'
 
 const TextField = (props) => {
   return (
-    <View style={styles['container']}>
+    <View style={[styles['container'], props.style]}>
       <TextInput
         underlineColorAndroid={'transparent'}
         style={styles['input']}

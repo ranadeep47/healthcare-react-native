@@ -20,35 +20,42 @@ const ProgressWizard = (props) => {
 
   let tickMark = <Tickmark style={{padding: 2.5}} fill={colors.white}/>
   return (
-    <View style={styles['container']}>
+    <View style={[styles['container'], props.style]}>
       <View style={[styles['bar'], {width: barDimensions[props.step].width}]}></View>
-      <View style={[styles['icon'], styles['first'], {backgroundColor: colors.blue}]}>
-        {tickMark}
-      </View>
-      <View style={[styles['icon'], styles['second'], props.step > 1 ? {backgroundColor: colors.blue} : null]}>
-        {props.step > 1 ? tickMark : null}
-      </View>
-      <View style={[styles['icon'], styles['third'], props.step > 3 ? {backgroundColor: colors.blue} : null]}>
-        {props.step > 3 ? tickMark : null}
-      </View>
       <View style={[styles['bar'], styles['inCompleteBar'], {left: barDimensions[props.step].left, width: barDimensions[props.step].remainingWidth}]}></View>
+      <View style={styles['icons']}>
+        <View style={[styles['icon'], styles['first'], {backgroundColor: colors.blue}]}>
+          {tickMark}
+        </View>
+        <View style={[styles['icon'], styles['second'], props.step > 1 ? {backgroundColor: colors.blue} : null]}>
+          {props.step > 1 ? tickMark : null}
+        </View>
+        <View style={[styles['icon'], styles['third'], props.step > 3 ? {backgroundColor: colors.blue} : null]}>
+          {props.step > 3 ? tickMark : null}
+        </View>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 20
+    width: 240    
   },
   bar: {
     height: 6,
     borderRadius: 50,
-    backgroundColor: colors.blue
+    backgroundColor: colors.blue,
+    top: 0
   },
   inCompleteBar: {
     backgroundColor: colors.lightGray,
-    zIndex: -1,
+    top: 0,
     ...StyleSheet.absoluteFillObject,
+  },
+  icons: {
+    ...StyleSheet.absoluteFillObject,
+    top: 0
   },
   icon: {
     ...StyleSheet.absoluteFillObject,
@@ -58,7 +65,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: colors.blue,
     borderRadius: 24/2,
-    top: -9
+    top: -9,
+    zIndex: 10
   },
   first: {
     left: 30

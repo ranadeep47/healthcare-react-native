@@ -63,7 +63,8 @@ SetDefaultFontFamily = () => {
 
     const customProps = {
         style: {
-            fontFamily: "circularstd-book"
+            fontFamily: "circularstd-book",
+            fontSize: 15
         }
     }
 

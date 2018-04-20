@@ -12,13 +12,23 @@ export default class MobileInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: false,
-      countryCode: props.countryCode
+      error: this.props.error,
+      countryCode: props.countryCode,
+      phoneNumber: ''
     }
+
+    this._onChangeText = this._onChangeText.bind(this);
   }
 
   componentWillReceiveProps(newProps, oldProps) {
     if(newProps.countryCode !== this.props.countryCode) this.setState({countryCode: newProps.countryCode})
+    if(newProps.error !== this.props.error) this.setState({error: newProps.error});
+  }
+
+  _onChangeText(phoneNumber) {
+    this.setState({phoneNumber}, () => {
+      this.props.onChange(this.state.phoneNumber);
+    })
   }
 
   render() {
@@ -36,6 +46,8 @@ export default class MobileInput extends React.Component {
             <Text style={styles['countryCode']}>{this.state.countryCode}</Text>
           </View>
           <TextInput
+            onChangeText={this._onChangeText}
+            value={this.state.phoneNumber}
             underlineColorAndroid={'transparent'}
             style={styles['input']}
             dataDetectorTypes='phoneNumber'
@@ -62,7 +74,7 @@ const styles = StyleSheet.create({
     borderColor: colors.separator,
   },
   countryCodeWrapper: {
-    padding: 20,
+    padding: 16,
     backgroundColor: colors.gray
   },
   countryCode: {
@@ -72,7 +84,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: fontSizes['lg'],
-    paddingHorizontal: 20
+    paddingHorizontal: 10
   },
   errorWrapper: {
     backgroundColor: colors.fadedRed,

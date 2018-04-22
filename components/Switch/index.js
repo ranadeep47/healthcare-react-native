@@ -13,7 +13,7 @@ export default class Switch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      on : props.on || false,
+      on : props.on,
     }
 
     this.state.moveKnob = new Animated.Value(this.state.on ? 1 : 0)

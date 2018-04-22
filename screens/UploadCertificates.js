@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white
   },
   bottomCard: {
-    flex: 1,
+    flex: 0.8,
     paddingHorizontal: 32,
     paddingVertical: 20,
     justifyContent: 'center'

@@ -36,14 +36,12 @@ export default class SignUp extends React.Component {
 
     return (
       <View style={styles['container']}>
-        <View>
-          <LinearGradient
-            style={styles['headerCard']}
-            colors={gradients.grayWhite}>
-            <Text style={styles['title']}>Create a new account</Text>
-            <Text style={styles['subtitle']}>Fill up the following fields to finish signup</Text>
-            </LinearGradient>
-        </View>
+        <LinearGradient
+          style={styles['headerCard']}
+          colors={gradients.grayWhite}>
+          <Text style={styles['title']}>Create a new account</Text>
+          <Text style={styles['subtitle']}>Fill up the following fields to finish signup</Text>
+          </LinearGradient>
         <View style={styles['form']}>
           <View style={styles['formItem']}>
             <Text style={styles['label']}>BLOOD GROUP</Text>
@@ -53,15 +51,13 @@ export default class SignUp extends React.Component {
             <Text style={styles['label']}>RESIDENTIAL ADDRESS</Text>
             <TextField placeholder='Enter your address'></TextField>
           </View>
-          <RangeSlider />
+
         </View>
-        <View>
-          <LinearGradient
-           style={styles['footerCard']}
-           colors={gradients.whiteGray}>
-            <Button size='lg' onPress={() => {}} >Create account</Button>
-          </LinearGradient>
-        </View>
+        <LinearGradient
+         style={styles['bottomCard']}
+         colors={gradients.whiteGray}>
+          <Button size='lg' onPress={() => {}} >Create account</Button>
+        </LinearGradient>
       </View>
 
     )
@@ -71,12 +67,10 @@ export default class SignUp extends React.Component {
 //<Close style={{...StyleSheet.absoluteFillObject, top: 12, left: 12}}/>
 const styles = StyleSheet.create({
   container: {
-
-  },
-
-  headerCard: {
-    paddingVertical: 36,
-    paddingHorizontal: 24
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    backgroundColor: colors.white
   },
   title: {
     fontSize: fontSizes['lg'],
@@ -86,9 +80,20 @@ const styles = StyleSheet.create({
     color: colors.text,
     marginVertical: 4
   },
+  headerCard: {
+    flex: 1,
+    paddingTop: 32,
+    paddingHorizontal: 24
+  },
   form: {
-    padding: 24,
-    backgroundColor: colors.white
+    flex: 5,
+    paddingHorizontal: 24    
+  },
+  bottomCard: {
+    flex: 0.8,
+    paddingHorizontal: 24,
+    paddingVertical: 20,
+    justifyContent: 'center'
   },
   formItem: {
     marginVertical: 8
@@ -97,8 +102,5 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     color: colors.text
   },
-  footerCard: {
-    paddingHorizontal: 24,
-    paddingVertical: 12
-  }
+
 })

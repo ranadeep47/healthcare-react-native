@@ -23,7 +23,7 @@ export default class PhoneVerification extends React.Component {
     super(props);
     this.state = {
       mobileNumber: '',
-      mobileSubmitted: true,
+      mobileSubmitted: false,
       mobileError: false
     };
 

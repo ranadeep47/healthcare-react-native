@@ -35,7 +35,6 @@ export default class SearchList extends React.Component {
           renderItem={this.props.renderItem}
           renderSectionHeader={this.props.renderSectionHeader}
           sections={this.state.sections}
-
         ></SectionList>
       </View>
     )
@@ -44,6 +43,6 @@ export default class SearchList extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-
+    flex: 1
   },
 })

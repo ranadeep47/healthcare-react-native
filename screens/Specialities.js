@@ -8,21 +8,21 @@ import {
 } from 'react-native';
 import { debounce } from 'lodash'
 import { colors, fontSizes } from '../constants/styles'
-import countries from '../constants/countries'
+import specialities from '../constants/specialities'
 import SearchList from '../components/SearchList'
 
-export default class Countries extends React.Component {
+export default class Specialities extends React.Component {
   constructor(props) {
     super(props);
     //TODO: this should be in the initial state of a reducer when using redux;
     let sections = [];
-    for(const key in countries) {
-      sections.push({title: key, data: countries[key]});
+    for(const key in specialities) {
+      sections.push({title: key, data: specialities[key]});
     }
     this.state = {sections}
     this.allSections = sections;
-    this.filterCountries = debounce(this.filterCountries, 200);
-    this.filterCountries = this.filterCountries.bind(this);
+    this.filterSpecialities = debounce(this.filterSpecialities, 200);
+    this.filterSpecialities = this.filterSpecialities.bind(this);
   }
 
   static navigationOptions = {
@@ -40,8 +40,7 @@ export default class Countries extends React.Component {
         return (
           <TouchableOpacity onPress={(e) => _this._onSelect(this.item)}>
             <View style={styles['row']}>
-                <Text style={styles['name']}>{item.name}</Text>
-                <Text style={styles['code']}>{item.code}</Text>
+                <Text style={styles['name']}>{item}</Text>
             </View>
           </TouchableOpacity>
         )
@@ -56,13 +55,13 @@ export default class Countries extends React.Component {
     )
   }
 
-  filterCountries(text) {
+  filterSpecialities(text) {
     text = text.toLowerCase();
     //todo regexp for alphabets only
     if(!text.length || !/[a-z]+$/.test(text)) return this.setState({sections: this.allSections});
     let section;
     section = this.allSections.filter((obj) => obj.title === text[0].toUpperCase()).pop();
-    let newSection = {title: section.title, data: section.data.filter((obj) => obj.name.toLowerCase().search(text) >= 0)}
+    let newSection = {title: section.title, data: section.data.filter((obj) => obj.toLowerCase().search(text) >= 0)}
     return this.setState({sections: [newSection]});
   }
 
@@ -71,11 +70,11 @@ export default class Countries extends React.Component {
       <View style={styles['container']}>
         <SearchList
           onSelect={this._onSelect}
-          onSearch={this.filterCountries}
+          onSearch={this.filterSpecialities}
           renderItem={this._returnRenderItem()}
           renderSectionHeader={this._renderSectionHeader}
           sections={this.state.sections}
-          title="countries"></SearchList>
+          title="specialities"></SearchList>
       </View>
     )
   }
@@ -83,7 +82,7 @@ export default class Countries extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1 //Setting flex:1 in here and in the container of <SearchList is required to display the whole list
   },
   section: {
     paddingHorizontal: 10,
@@ -100,10 +99,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white
   },
   name: {
-    flex: 6
-  },
-  code: {
-    flex: 1,
-    color: colors.blue
+
   }
 })

@@ -5,7 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  ScrollView
+  FlatList
 } from 'react-native';
 
 import moment from 'moment'
@@ -16,58 +16,88 @@ import { colors, fontSizes } from '../../constants/styles'
 export default class HorizontalCalendar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selected: moment(this.props.startDate || new Date()) }
+    const {onSelect, prev, next, startDate} = props;
+    const start = moment(startDate || new Date());
+    const prevDays = Array(prev).fill().map((e,i)=>i+1).map((n) => moment(start).subtract(n, 'days'))
+    const nextDays = Array(next).fill().map((e,i)=>i+1).map((n) => moment(start).add(n, 'days'));
+    const calendar = [...prevDays, start, ...nextDays];
+
+    this.state = {
+      selected: moment(this.props.startDate || new Date()),
+      calendar: calendar
+    }
   }
 
-  onSelect(selected) {
+  _onSelect(selected) {
     this.setState({selected}, () => {
       this.props.onSelect(selected);
     })
   }
 
-  render() {
-    const {onSelect, prev, next} = this.props;
-    const startDate = moment(this.props.startDate || new Date());
-    const prevDays = [...Array(prev+1).keys()].slice(1).map((n) => startDate.subtract(n, 'days'))
-    const nextDays = [...Array(next+1).keys()].slice(1).map((n) => startDate.add(n, 'days'));
-    const calendar = [...prevDays, startDate, ...nextDays];
+  _keyExtractor = (item, index) => 'key'+index;
 
+  _renderItem= ({item, index}) => {
+    const isSelected = this.state.selected.isSame(item, 'day');
     return (
-        <ScrollView horizontal={true} style={[styles['container'], this.props.style]}>
-          {calendar.map((m, i) => {
-            const isSelected = this.state.selected.isSame(m, 'day');
-            return (
-              <View key={i} style={styles['dateWrapper']}>
-                <Text style={styles['month']}>{m.format("MMM")}</Text>
-                <View style={[styles['date'], isSelected ? styles['selected'] : null]}>
-                  <Text>{m.format("D")}</Text>
-                </View>
-                <Text style={styles['day']}>{m.format("ddd")}</Text>
-              </View>
-            )
-          })}
-        </ScrollView>
+      <View style={styles['dateWrapper']}>
+        <Text style={styles['month']}>{item.format("MMM")}</Text>
+        <TouchableOpacity
+          onPress={this._onSelect.bind(this, item)}
+          style={[styles['date'], isSelected ? styles['selected'] : null]}>
+          <Text
+            style={{fontSize: fontSizes['xx-lg'], color: isSelected ? colors.white : colors.dark.text}}>
+            {item.format("D")}
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles['day']}>{item.format("ddd")}</Text>
+      </View>
+    )
+  }
+
+  render() {
+    return (
+        <FlatList
+          data={this.state.calendar}
+          renderItem={this._renderItem}
+          horizontal
+          keyExtractor={this._keyExtractor}
+          style={[styles['container'], this.props.style]}>
+        </FlatList>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-
+    backgroundColor: colors.white
   },
   dateWrapper: {
-
+    width: 60,
+    padding: 8,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   month: {
-
+    fontSize: 13,
+    color: colors.text,
+    textAlign: 'center',
   },
   date: {
-
+    width: 32,
+    height: 32,
+    borderRadius: 32/2,
+    marginVertical: 4,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   day: {
-
+    fontSize: 13,
+    color: colors.text,
+    textAlign: 'center'
   },
   selected: {
-
+    backgroundColor: colors.blue
   }
 })

@@ -15,6 +15,8 @@ import {
   Lightbox,
 } from 'react-native-router-flux';
 
+import { colors, fontSizes } from '../constants/styles'
+
 import SampleScreen from '../screens/SampleScreen';
 import PhoneVerification from '../screens/PhoneVerification';
 import Countries from '../screens/Countries';
@@ -50,40 +52,36 @@ export default class RootNavigator extends React.Component {
           <Scene key="specialities" component={Specialities} title="Specialities"/>
           <Scene key="preferences" component={Preferences} title="Preferences"/>
           <Scene key="call_availability" component={CallAvailability} title="Call Availability"/>
-          <Tabs
-            key="tabs_appointments"
-            activeBackgroundColor="white"
-            inactiveBackgroundColor="rgba(255, 0, 0, 0.5)"
-            tabBarStyle={{marginTop: 100}}
-            swipeEnabled={true}>
-            <Scene
-              key="upcoming_appointments"
-              component={UpcomingAppointments}
-              title="Upcoming Appointments"
-              tabBarLabel="Upcoming"
-              inactiveBackgroundColor="#FFF"
-              activeBackgroundColor="#DDD"
-              titleStyle={{ color: 'white', alignSelf: 'center' }}/>
-            <Scene
-              key="past_appointments"
-              component={PastAppointments}
-              title="Past Appointments"
-              tabBarLabel="Past"
-              inactiveBackgroundColor="#FFF"
-              activeBackgroundColor="#DDD"
-              titleStyle={{ color: 'white', alignSelf: 'center' }}/>
-            <Scene
-              key="appointments_requests"
-              component={AppointmentRequests}
-              title="Appointment Requests"
-              tabBarLabel="Requests"
-              inactiveBackgroundColor="#FFF"
-              activeBackgroundColor="#DDD"
-              titleStyle={{ color: 'white', alignSelf: 'center' }}/>
-          </Tabs>          
+          <Scene key="appointments" title="Appointments">
+            <Tabs
+              key="tabs_appointments"
+              activeTintColor={colors.blue}
+              inactiveTintColor={colors.lightText}
+              labelStyle={{fontSize: fontSizes['sm'], flex: 1, marginBottom: 12}}
+              tabStyle={{}}
+              activeBackgroundColor={colors.background}
+              inactiveBackgroundColor={colors.background}
+              tabBarStyle={{marginTop: 20}}
+              swipeEnabled={true}>
+              <Scene
+                hideNavBar
+                key="upcoming_appointments"
+                component={UpcomingAppointments}
+                tabBarLabel="Upcoming"/>
+              <Scene
+                hideNavBar
+                key="past_appointments"
+                component={PastAppointments}
+                tabBarLabel="Past"/>
+              <Scene
+                hideNavBar
+                key="appointments_requests"
+                component={AppointmentRequests}
+                tabBarLabel="Requests"/>
+            </Tabs>
+          </Scene>
         </Stack>
       </Router>
     )
   }
-
 }

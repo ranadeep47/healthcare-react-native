@@ -33,7 +33,7 @@ export const fontSizes = {
   'md'      : 16,
   'lg'      : 18,
   'x-lg'    : 20,
-  'xx-lg'   : 24,
+  'xx-lg'   : 22,
   'xxx-lg'  : 30
 }
 

@@ -13,7 +13,7 @@ const Button = (props) => {
   let background = props.background || colors.blue;
   let size = props.size || 'md';
   let textStyles = {
-    color: background === 'transparent' ? colors.blue : colors.white,
+    color: background === 'transparent' ? props.border || colors.blue : colors.white,
     fontSize: fontSizes[size],
     textAlign: 'center'
   }
@@ -25,7 +25,7 @@ const Button = (props) => {
         {backgroundColor: background},
         styles[size],
         props.style,
-        props.background === 'transparent' ? {borderWidth: 2, borderColor: colors.blue} : null]} 
+        props.background === 'transparent' ? {borderWidth: 2, borderColor: props.border || colors.blue} : null]}
       onPress={props.onPress}>
       <Text style={textStyles}>{props.children}</Text>
     </TouchableOpacity>
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 
   md: {
     paddingHorizontal: 24,
-    paddingVertical: 12,
+    paddingVertical: 16,
   },
 
   lg: {

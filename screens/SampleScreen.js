@@ -11,7 +11,7 @@ import {
 import { Actions } from 'react-native-router-flux';
 import { colors, fontSizes } from '../constants/styles'
 import Link from '../components/Link'
-import HorizontalCalendar from '../components/HorizontalCalendar'
+
 
 export default class SampleScreen extends React.Component {
   constructor(props) {
@@ -30,6 +30,7 @@ export default class SampleScreen extends React.Component {
           <Link onPress={Actions.specialities}>Specialities</Link>
           <Link onPress={Actions.preferences}>Preferences</Link>
           <Link onPress={Actions.call_availability}>Call Availability</Link>
+          <Link onPress={Actions.appointments}>Appointments</Link>
         </ScrollView>
       </View>
     )

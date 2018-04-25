@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
 
   lg: {
-    paddingHorizontal: 32,
+    paddingHorizontal: 8,
     paddingVertical: 16,
   },
 

@@ -39,7 +39,7 @@ export default class HorizontalCalendar extends React.Component {
   _renderItem= ({item, index}) => {
     const isSelected = this.state.selected.isSame(item, 'day');
     return (
-      <View style={styles['dateWrapper']}>
+      <View style={[styles['dateWrapper'], this.props.styles]}>
         <Text style={styles['month']}>{item.format("MMM")}</Text>
         <TouchableOpacity
           onPress={this._onSelect.bind(this, item)}

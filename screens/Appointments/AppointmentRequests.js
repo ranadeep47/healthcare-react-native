@@ -7,6 +7,7 @@ import {
   FlatList
 } from 'react-native';
 import moment from 'moment';
+import { Actions } from 'react-native-router-flux';
 
 import { colors, fontSizes, gradients } from '../../constants/styles'
 
@@ -38,10 +39,15 @@ export default class AppointmentRequests extends React.Component {
     }
   }
 
+  _onAction = (action, data) => {
+    console.log(action);
+    if(action === 'PROPOSE_TIMINGS') Actions.push('schedule_picker_lightbox');
+  }
+
   _renderAppointments = ({item, index}) => {
     return (
       <View style={styles.card}>
-        <UserCallSchedule data={item} />
+        <UserCallSchedule data={item} onAction={this._onAction}/>
       </View>
     )
   }

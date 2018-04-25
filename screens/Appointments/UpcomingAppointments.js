@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import moment from 'moment'
+
 import { colors, fontSizes, gradients } from '../../constants/styles'
 
 import HorizontalCalendar from '../../components/HorizontalCalendar'
@@ -58,7 +59,7 @@ export default class UpcomingAppointments extends React.Component {
     return (
       <View style={styles.card}>
         <UserCallSchedule data={item} />
-        <Button style={{marginHorizontal: 32, marginVertical: 16}} size='lg' onPress={this._onPressStartVideoCall.bind(this, item)}>
+        <Button style={{marginHorizontal: 32, marginBottom: 16}} size='lg' onPress={this._onPressStartVideoCall.bind(this, item)}>
           Start video call with {firstName}
         </Button>
       </View>

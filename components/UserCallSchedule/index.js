@@ -24,8 +24,8 @@ export default class UserCallSchedule extends React.Component {
       }
     }
 
-    _onAction(Action, data) {
-
+    _onAction(Action) {
+      this.props.onAction(Action, this.props.data);
     }
 
     _formateTime(time) {

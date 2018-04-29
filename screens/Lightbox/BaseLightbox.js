@@ -47,7 +47,7 @@ export default class BaseLightbox extends Component {
     const { children, align } = this.props;
     let horizontalPercent = 1, verticalPercent = 0.8;
     if(align === 'center') {
-      horizontalPercent = 0.9;
+      horizontalPercent = 0.8;
       verticalPercent = 0.5;
     }
     const height = verticalPercent ? deviceHeight * verticalPercent : deviceHeight;
@@ -55,12 +55,11 @@ export default class BaseLightbox extends Component {
 
     return (
       <View
-        style={{
+        style={[{
           width,
           height,
-          backgroundColor: 'white'
-        }}
-      >
+          backgroundColor: 'white'          
+        }, this.props.style]}>
         {children}
       </View>
     );
@@ -89,6 +88,6 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 });

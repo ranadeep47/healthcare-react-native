@@ -24,8 +24,8 @@ const Button = (props) => {
         styles.button,
         {backgroundColor: background},
         styles[size],
-        props.style,
-        props.background === 'transparent' ? {borderWidth: 2, borderColor: props.border || colors.blue} : null]}
+        props.background === 'transparent' ? {borderWidth: 2, borderColor: props.border || colors.blue} : null,
+        props.style]}
       onPress={props.onPress}>
       <Text style={textStyles}>{props.children}</Text>
     </TouchableOpacity>
@@ -33,7 +33,6 @@ const Button = (props) => {
 }
 
 const styles = StyleSheet.create({
-
   button: {
     borderRadius: 4
   },

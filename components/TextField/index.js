@@ -12,8 +12,9 @@ const TextField = (props) => {
     <View style={[styles['container'], props.style]}>
       <TextInput
         underlineColorAndroid={'transparent'}
-        style={styles['input']}
+        style={[styles['input'], props.inputStyle]}
         placeholder={props.placeholder || ''}
+        placeholderTextColor={props.placeholderTextColor || colors.lightText}
       ></TextInput>
     </View>
   )

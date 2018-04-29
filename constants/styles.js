@@ -2,6 +2,7 @@ export const colors = {
   lightText: 'rgba(111,123,135,0.7)',
   text: 'rgb(111,123,135)',
   white: 'rgb(255,255,255)',
+  borderWhite: 'rgba(255,255,255,0.9)',
   fadedWhite: 'rgba(255,255,255,0.4)',
   background: 'rgb(248,251,250)',
   greenBlue: 'rgb(0,210,131)',
@@ -24,7 +25,8 @@ export const colors = {
 
 export const gradients = {
   grayWhite: ['rgb(243,246,248)', colors.white],
-  whiteGray: [colors.white, 'rgb(243,246,248)']
+  whiteGray: [colors.white, 'rgb(243,246,248)'],
+  greenBlue: [colors.green, colors.blue]
 }
 
 export const fontSizes = {

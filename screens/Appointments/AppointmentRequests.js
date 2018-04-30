@@ -47,7 +47,7 @@ export default class AppointmentRequests extends React.Component {
   _renderAppointments = ({item, index}) => {
     return (
       <View style={styles.card}>
-        <UserCallSchedule data={item} onAction={this._onAction}/>
+        <UserCallSchedule style={{padding: 16}} data={item} onAction={this._onAction}/>
       </View>
     )
   }
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.white,
     borderBottomWidth: 1,
-    borderColor: colors.separator
+    borderColor: colors.separator,
   },
   list:{
     flex: 1

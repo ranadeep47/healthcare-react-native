@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
 
   sm: {
-    paddingHorizontal: 16,
+    paddingHorizontal: 12,
     paddingVertical: 8,
   },
 

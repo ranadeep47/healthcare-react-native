@@ -35,8 +35,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.blue,
     paddingVertical: 8,
-    paddingHorizontal: 4,
-    width: 70
+    // paddingHorizontal: 16,
+    width: 78,
+    height: 40,
+    justifyContent: 'center'
   },
   text: {
     textAlign: 'center',

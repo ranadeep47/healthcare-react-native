@@ -82,13 +82,14 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.white,
     borderBottomWidth: 1,
-    borderColor: colors.separator
+    borderColor: colors.separator,
+    paddingHorizontal: 16,
+    paddingTop: 16
   },
   list:{
     flex: 1
   },
   timingWrapper: {
-    paddingHorizontal: 16,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },

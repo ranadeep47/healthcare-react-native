@@ -25,15 +25,20 @@ import UploadCertificates from '../screens/UploadCertificates';
 import Specialities from '../screens/Specialities';
 import Preferences from '../screens/Preferences';
 import CallAvailability from '../screens/CallAvailability';
+import DoctorDetail from '../screens/DoctorDetail';
 
 import Appointments from '../screens/Appointments'
 import UpcomingAppointments from '../screens/Appointments/UpcomingAppointments'
 import PastAppointments from '../screens/Appointments/PastAppointments'
 import AppointmentRequests from '../screens/Appointments/AppointmentRequests'
 import Chats from '../screens/Chats'
+import FavoriteDoctors from '../screens/FavoriteDoctors'
 
 import SchedulePicker from '../screens/Lightbox/SchedulePicker'
+import PatientSchedulePicker from '../screens/Lightbox/PatientSchedulePicker'
+import PatientCancelAppointment from '../screens/Lightbox/PatientCancelAppointment'
 import UserProfileLightbox from '../screens/Lightbox/UserProfile'
+import QuoteLoaderLightbox from '../screens/Lightbox/QuoteLoader'
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
@@ -85,10 +90,15 @@ export default class RootNavigator extends React.Component {
                  tabBarLabel="Requests"/>
              </Tabs>
            </Scene>
-           <Scene initial key="chats" component={Chats} title="Chats" />
+           <Scene key="chats" component={Chats} title="Chats" />
+           <Scene key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
+           <Scene initial key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
          </Stack>
          <Scene key="schedule_picker_lightbox" component={SchedulePicker} />
+         <Scene key="patient_schedule_picker_lightbox" component={PatientSchedulePicker} />
+         <Scene key="patient_cancel_appointment_lightbox" component={PatientCancelAppointment} />
          <Scene key="user_profile_lightbox" component={UserProfileLightbox} />
+         <Scene key="quote_loader_lightbox" component={QuoteLoaderLightbox} />
        </Lightbox>
       </Router>
     )

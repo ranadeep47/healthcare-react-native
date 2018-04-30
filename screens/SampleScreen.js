@@ -31,6 +31,9 @@ export default class SampleScreen extends React.Component {
           <Link onPress={Actions.preferences}>Preferences</Link>
           <Link onPress={Actions.call_availability}>Call Availability</Link>
           <Link onPress={Actions.appointments}>Appointments</Link>
+          <Link onPress={Actions.chats}>Chats</Link>
+          <Link onPress={Actions.doctor_detail}>Doctor Detail</Link>
+          <Link onPress={Actions.favorite_doctors}>Favorite Doctors</Link>
         </ScrollView>
       </View>
     )

@@ -75,6 +75,8 @@ export default class UserCallSchedule extends React.Component {
         </View>
       ) : null;
 
+      let specialisation = data.specialisation ? <Text style={[styles.text, {marginHorizontal: 0, width: 200, marginVertical: 8}]}>{data.specialisation}</Text> : null
+
       let cancelledTiming = data.status && data.status === 'ReScheduled' ? (
         <View style={{flexDirection: 'row', marginVertical: 8}}>
           <Image source={TimeIcon}/><Text style={[styles.text, {color: colors.lightText, textDecorationLine: 'line-through', textDecorationStyle: 'solid'}]}>
@@ -86,16 +88,21 @@ export default class UserCallSchedule extends React.Component {
       let footer = this._renderFooter();
 
       return (
-        <View style={styles.container}>
+        <View style={[styles.container, this.props.style]}>
           <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
             <View style={{flex:2}}>
               <Avatar source={data.avatar}/>
             </View>
             <View style={{flex: 6}}>
+
               <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
-                <Text style={styles.name}>{data.name}</Text>
+                <View>
+                  <Text style={styles.name}>{data.name}</Text>
+                  {specialisation}
+                </View>
                 {status}
               </View>
+
               <View style={{flexDirection: 'row', marginVertical:8}}>
                 <Image source={VideoCallIcon}/><Text style={styles.text}>{data.callType}</Text>
               </View>
@@ -103,6 +110,7 @@ export default class UserCallSchedule extends React.Component {
               <View style={{flexDirection: 'row', marginVertical: 8}}>
                 <Image source={TimeIcon}/><Text style={styles.text}>{this._formateTime(data.time)}</Text>
               </View>
+
             </View>
           </View>
           <View style={{marginTop: 8}}>
@@ -115,8 +123,7 @@ export default class UserCallSchedule extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
-    padding: 16
+    backgroundColor: colors.white
   },
   name: {
     fontSize: fontSizes['md'],

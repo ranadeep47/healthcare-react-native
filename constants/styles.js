@@ -3,6 +3,7 @@ export const colors = {
   text: 'rgb(111,123,135)',
   white: 'rgb(255,255,255)',
   borderWhite: 'rgba(255,255,255,0.9)',
+  lightWhite: 'rgba(255,255,255,0.8)',
   fadedWhite: 'rgba(255,255,255,0.4)',
   background: 'rgb(248,251,250)',
   greenBlue: 'rgb(0,210,131)',

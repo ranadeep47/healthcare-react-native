@@ -2,11 +2,21 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Image
+  Image,
+  View
 } from 'react-native';
 
+import LiveIcon from '../../assets/images/Live.png'
+
 const Avatar = (props) => {
-  return (<Image style={[styles['container'], props.style]} source={{uri: props.source}}/>)
+  const isOnline = props.isOnline || false;
+  const liveIcon = isOnline ? <Image source={LiveIcon} style={styles.liveIcon} /> : null
+  return (
+    <View>
+      <Image style={[styles['container'], props.style]} source={{uri: props.source}}/>
+      {liveIcon}
+    </View>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -14,6 +24,11 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 60/2
+  },
+  liveIcon: {
+    ...StyleSheet.absoluteFillObject,
+    top: -16,
+    left: 24
   }
 })
 

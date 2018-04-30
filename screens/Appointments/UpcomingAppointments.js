@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.white,
     borderBottomWidth: 1,
-    borderColor: colors.separator
+    borderColor: colors.separator,
+    padding: 16
   }
 })

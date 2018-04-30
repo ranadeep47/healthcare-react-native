@@ -45,10 +45,10 @@ export default class BaseLightbox extends Component {
 
   _renderLightBox = () => {
     const { children, align } = this.props;
-    let horizontalPercent = 1, verticalPercent = 0.8;
+    let horizontalPercent = this.props.horizontal || 1, verticalPercent = this.props.vertical || 0.8;
     if(align === 'center') {
-      horizontalPercent = 0.8;
-      verticalPercent = 0.5;
+      horizontalPercent = this.props.horizontal || 0.8;
+      verticalPercent = this.props.vertical || 0.5;
     }
     const height = verticalPercent ? deviceHeight * verticalPercent : deviceHeight;
     const width = horizontalPercent ? deviceWidth * horizontalPercent : deviceWidth;
@@ -58,7 +58,7 @@ export default class BaseLightbox extends Component {
         style={[{
           width,
           height,
-          backgroundColor: 'white'          
+          backgroundColor: 'white'
         }, this.props.style]}>
         {children}
       </View>

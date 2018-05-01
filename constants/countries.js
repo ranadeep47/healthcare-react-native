@@ -1,272 +1,1135 @@
 let data =
-{ A:
-[ { name: 'Afghanistan', code: '+93' },
- { name: 'Aland Islands', code: '+358' },
- { name: 'Albania', code: '+355' },
- { name: 'Algeria', code: '+213' },
- { name: 'AmericanSamoa', code: '+1684' },
- { name: 'Andorra', code: '+376' },
- { name: 'Angola', code: '+244' },
- { name: 'Anguilla', code: '+1264' },
- { name: 'Antarctica', code: '+672' },
- { name: 'Antigua and Barbuda', code: '+1268' },
- { name: 'Argentina', code: '+54' },
- { name: 'Armenia', code: '+374' },
- { name: 'Aruba', code: '+297' },
- { name: 'Australia', code: '+61' },
- { name: 'Austria', code: '+43' },
- { name: 'Azerbaijan', code: '+994' } ],
-B:
-[ { name: 'Bahamas', code: '+1242' },
- { name: 'Bahrain', code: '+973' },
- { name: 'Bangladesh', code: '+880' },
- { name: 'Barbados', code: '+1246' },
- { name: 'Belarus', code: '+375' },
- { name: 'Belgium', code: '+32' },
- { name: 'Belize', code: '+501' },
- { name: 'Benin', code: '+229' },
- { name: 'Bermuda', code: '+1441' },
- { name: 'Bhutan', code: '+975' },
- { name: 'Bolivia, Plurinational State of', code: '+591' },
- { name: 'Bosnia and Herzegovina', code: '+387' },
- { name: 'Botswana', code: '+267' },
- { name: 'Brazil', code: '+55' },
- { name: 'British Indian Ocean Territory', code: '+246' },
- { name: 'Brunei Darussalam', code: '+673' },
- { name: 'Bulgaria', code: '+359' },
- { name: 'Burkina Faso', code: '+226' },
- { name: 'Burundi', code: '+257' } ],
-C:
-[ { name: 'Cambodia', code: '+855' },
- { name: 'Cameroon', code: '+237' },
- { name: 'Canada', code: '+1' },
- { name: 'Cape Verde', code: '+238' },
- { name: 'Cayman Islands', code: '+ 345' },
- { name: 'Central African Republic', code: '+236' },
- { name: 'Chad', code: '+235' },
- { name: 'Chile', code: '+56' },
- { name: 'China', code: '+86' },
- { name: 'Christmas Island', code: '+61' },
- { name: 'Cocos (Keeling) Islands', code: '+61' },
- { name: 'Colombia', code: '+57' },
- { name: 'Comoros', code: '+269' },
- { name: 'Congo', code: '+242' },
- { name: 'Congo, The Democratic Republic of the Congo',
-   code: '+243' },
- { name: 'Cook Islands', code: '+682' },
- { name: 'Costa Rica', code: '+506' },
- { name: 'Cote d\'Ivoire', code: '+225' },
- { name: 'Croatia', code: '+385' },
- { name: 'Cuba', code: '+53' },
- { name: 'Cyprus', code: '+357' },
- { name: 'Czech Republic', code: '+420' } ],
-D:
-[ { name: 'Denmark', code: '+45' },
- { name: 'Djibouti', code: '+253' },
- { name: 'Dominica', code: '+1767' },
- { name: 'Dominican Republic', code: '+1849' } ],
-E:
-[ { name: 'Ecuador', code: '+593' },
- { name: 'Egypt', code: '+20' },
- { name: 'El Salvador', code: '+503' },
- { name: 'Equatorial Guinea', code: '+240' },
- { name: 'Eritrea', code: '+291' },
- { name: 'Estonia', code: '+372' },
- { name: 'Ethiopia', code: '+251' } ],
-F:
-[ { name: 'Falkland Islands (Malvinas)', code: '+500' },
- { name: 'Faroe Islands', code: '+298' },
- { name: 'Fiji', code: '+679' },
- { name: 'Finland', code: '+358' },
- { name: 'France', code: '+33' },
- { name: 'French Guiana', code: '+594' },
- { name: 'French Polynesia', code: '+689' } ],
-G:
-[ { name: 'Gabon', code: '+241' },
- { name: 'Gambia', code: '+220' },
- { name: 'Georgia', code: '+995' },
- { name: 'Germany', code: '+49' },
- { name: 'Ghana', code: '+233' },
- { name: 'Gibraltar', code: '+350' },
- { name: 'Greece', code: '+30' },
- { name: 'Greenland', code: '+299' },
- { name: 'Grenada', code: '+1473' },
- { name: 'Guadeloupe', code: '+590' },
- { name: 'Guam', code: '+1671' },
- { name: 'Guatemala', code: '+502' },
- { name: 'Guernsey', code: '+44' },
- { name: 'Guinea', code: '+224' },
- { name: 'Guinea-Bissau', code: '+245' },
- { name: 'Guyana', code: '+595' } ],
-H:
-[ { name: 'Haiti', code: '+509' },
- { name: 'Holy See (Vatican City State)', code: '+379' },
- { name: 'Honduras', code: '+504' },
- { name: 'Hong Kong', code: '+852' },
- { name: 'Hungary', code: '+36' } ],
-I:
-[ { name: 'Iceland', code: '+354' },
- { name: 'India', code: '+91' },
- { name: 'Indonesia', code: '+62' },
- { name: 'Iran, Islamic Republic of Persian Gulf', code: '+98' },
- { name: 'Iraq', code: '+964' },
- { name: 'Ireland', code: '+353' },
- { name: 'Isle of Man', code: '+44' },
- { name: 'Israel', code: '+972' },
- { name: 'Italy', code: '+39' } ],
-J:
-[ { name: 'Jamaica', code: '+1876' },
- { name: 'Japan', code: '+81' },
- { name: 'Jersey', code: '+44' },
- { name: 'Jordan', code: '+962' } ],
-K:
-[ { name: 'Kazakhstan', code: '+77' },
- { name: 'Kenya', code: '+254' },
- { name: 'Kiribati', code: '+686' },
- { name: 'Korea, Democratic People\'s Republic of Korea',
-   code: '+850' },
- { name: 'Korea, Republic of South Korea', code: '+82' },
- { name: 'Kuwait', code: '+965' },
- { name: 'Kyrgyzstan', code: '+996' } ],
-L:
-[ { name: 'Laos', code: '+856' },
- { name: 'Latvia', code: '+371' },
- { name: 'Lebanon', code: '+961' },
- { name: 'Lesotho', code: '+266' },
- { name: 'Liberia', code: '+231' },
- { name: 'Libyan Arab Jamahiriya', code: '+218' },
- { name: 'Liechtenstein', code: '+423' },
- { name: 'Lithuania', code: '+370' },
- { name: 'Luxembourg', code: '+352' } ],
-M:
-[ { name: 'Macao', code: '+853' },
- { name: 'Macedonia', code: '+389' },
- { name: 'Madagascar', code: '+261' },
- { name: 'Malawi', code: '+265' },
- { name: 'Malaysia', code: '+60' },
- { name: 'Maldives', code: '+960' },
- { name: 'Mali', code: '+223' },
- { name: 'Malta', code: '+356' },
- { name: 'Marshall Islands', code: '+692' },
- { name: 'Martinique', code: '+596' },
- { name: 'Mauritania', code: '+222' },
- { name: 'Mauritius', code: '+230' },
- { name: 'Mayotte', code: '+262' },
- { name: 'Mexico', code: '+52' },
- { name: 'Micronesia, Federated States of Micronesia',
-   code: '+691' },
- { name: 'Moldova', code: '+373' },
- { name: 'Monaco', code: '+377' },
- { name: 'Mongolia', code: '+976' },
- { name: 'Montenegro', code: '+382' },
- { name: 'Montserrat', code: '+1664' },
- { name: 'Morocco', code: '+212' },
- { name: 'Mozambique', code: '+258' },
- { name: 'Myanmar', code: '+95' } ],
-N:
-[ { name: 'Namibia', code: '+264' },
- { name: 'Nauru', code: '+674' },
- { name: 'Nepal', code: '+977' },
- { name: 'Netherlands', code: '+31' },
- { name: 'Netherlands Antilles', code: '+599' },
- { name: 'New Caledonia', code: '+687' },
- { name: 'New Zealand', code: '+64' },
- { name: 'Nicaragua', code: '+505' },
- { name: 'Niger', code: '+227' },
- { name: 'Nigeria', code: '+234' },
- { name: 'Niue', code: '+683' },
- { name: 'Norfolk Island', code: '+672' },
- { name: 'Northern Mariana Islands', code: '+1670' },
- { name: 'Norway', code: '+47' } ],
-O: [ { name: 'Oman', code: '+968' } ],
-P:
-[ { name: 'Pakistan', code: '+92' },
- { name: 'Palau', code: '+680' },
- { name: 'Palestinian Territory, Occupied', code: '+970' },
- { name: 'Panama', code: '+507' },
- { name: 'Papua New Guinea', code: '+675' },
- { name: 'Paraguay', code: '+595' },
- { name: 'Peru', code: '+51' },
- { name: 'Philippines', code: '+63' },
- { name: 'Pitcairn', code: '+872' },
- { name: 'Poland', code: '+48' },
- { name: 'Portugal', code: '+351' },
- { name: 'Puerto Rico', code: '+1939' } ],
-Q: [ { name: 'Qatar', code: '+974' } ],
-R:
-[ { name: 'Romania', code: '+40' },
- { name: 'Russia', code: '+7' },
- { name: 'Rwanda', code: '+250' },
- { name: 'Reunion', code: '+262' } ],
-S:
-[ { name: 'Saint Barthelemy', code: '+590' },
- { name: 'Saint Helena, Ascension and Tristan Da Cunha',
-   code: '+290' },
- { name: 'Saint Kitts and Nevis', code: '+1869' },
- { name: 'Saint Lucia', code: '+1758' },
- { name: 'Saint Martin', code: '+590' },
- { name: 'Saint Pierre and Miquelon', code: '+508' },
- { name: 'Saint Vincent and the Grenadines', code: '+1784' },
- { name: 'Samoa', code: '+685' },
- { name: 'San Marino', code: '+378' },
- { name: 'Sao Tome and Principe', code: '+239' },
- { name: 'Saudi Arabia', code: '+966' },
- { name: 'Senegal', code: '+221' },
- { name: 'Serbia', code: '+381' },
- { name: 'Seychelles', code: '+248' },
- { name: 'Sierra Leone', code: '+232' },
- { name: 'Singapore', code: '+65' },
- { name: 'Slovakia', code: '+421' },
- { name: 'Slovenia', code: '+386' },
- { name: 'Solomon Islands', code: '+677' },
- { name: 'Somalia', code: '+252' },
- { name: 'South Africa', code: '+27' },
- { name: 'South Sudan', code: '+211' },
- { name: 'South Georgia and the South Sandwich Islands',
-   code: '+500' },
- { name: 'Spain', code: '+34' },
- { name: 'Sri Lanka', code: '+94' },
- { name: 'Sudan', code: '+249' },
- { name: 'Suriname', code: '+597' },
- { name: 'Svalbard and Jan Mayen', code: '+47' },
- { name: 'Swaziland', code: '+268' },
- { name: 'Sweden', code: '+46' },
- { name: 'Switzerland', code: '+41' },
- { name: 'Syrian Arab Republic', code: '+963' } ],
-T:
-[ { name: 'Taiwan', code: '+886' },
- { name: 'Tajikistan', code: '+992' },
- { name: 'Tanzania, United Republic of Tanzania', code: '+255' },
- { name: 'Thailand', code: '+66' },
- { name: 'Timor-Leste', code: '+670' },
- { name: 'Togo', code: '+228' },
- { name: 'Tokelau', code: '+690' },
- { name: 'Tonga', code: '+676' },
- { name: 'Trinidad and Tobago', code: '+1868' },
- { name: 'Tunisia', code: '+216' },
- { name: 'Turkey', code: '+90' },
- { name: 'Turkmenistan', code: '+993' },
- { name: 'Turks and Caicos Islands', code: '+1649' },
- { name: 'Tuvalu', code: '+688' } ],
-U:
-[ { name: 'Uganda', code: '+256' },
- { name: 'Ukraine', code: '+380' },
- { name: 'United Arab Emirates', code: '+971' },
- { name: 'United Kingdom', code: '+44' },
- { name: 'United States', code: '+1' },
- { name: 'Uruguay', code: '+598' },
- { name: 'Uzbekistan', code: '+998' } ],
-V:
-[ { name: 'Vanuatu', code: '+678' },
- { name: 'Venezuela, Bolivarian Republic of Venezuela',
-   code: '+58' },
- { name: 'Vietnam', code: '+84' },
- { name: 'Virgin Islands, British', code: '+1284' },
- { name: 'Virgin Islands, U.S.', code: '+1340' } ],
-W: [ { name: 'Wallis and Futuna', code: '+681' } ],
-Y: [ { name: 'Yemen', code: '+967' } ],
-Z:
-[ { name: 'Zambia', code: '+260' },
- { name: 'Zimbabwe', code: '+263' } ] }
+{
+   "A":[
+      {
+         "name":"Afghanistan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/af.svg",
+         "code":"+93"
+      },
+      {
+         "name":"Aland Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ax.svg",
+         "code":"+358"
+      },
+      {
+         "name":"Albania",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/al.svg",
+         "code":"+355"
+      },
+      {
+         "name":"Algeria",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/dz.svg",
+         "code":"+213"
+      },
+      {
+         "name":"Andorra",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ad.svg",
+         "code":"+376"
+      },
+      {
+         "name":"Angola",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ao.svg",
+         "code":"+244"
+      },
+      {
+         "name":"Anguilla",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ai.svg",
+         "code":"+1264"
+      },
+      {
+         "name":"Antigua and Barbuda",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ag.svg",
+         "code":"+1268"
+      },
+      {
+         "name":"Argentina",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ar.svg",
+         "code":"+54"
+      },
+      {
+         "name":"Armenia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/am.svg",
+         "code":"+374"
+      },
+      {
+         "name":"Aruba",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/aw.svg",
+         "code":"+297"
+      },
+      {
+         "name":"Australia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/au.svg",
+         "code":"+61"
+      },
+      {
+         "name":"Austria",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/at.svg",
+         "code":"+43"
+      },
+      {
+         "name":"Azerbaijan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/az.svg",
+         "code":"+994"
+      }
+   ],
+   "B":[
+      {
+         "name":"Bahamas",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bs.svg",
+         "code":"+1242"
+      },
+      {
+         "name":"Bahrain",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bh.svg",
+         "code":"+973"
+      },
+      {
+         "name":"Bangladesh",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bd.svg",
+         "code":"+880"
+      },
+      {
+         "name":"Barbados",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bb.svg",
+         "code":"+1246"
+      },
+      {
+         "name":"Belarus",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/by.svg",
+         "code":"+375"
+      },
+      {
+         "name":"Belgium",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/be.svg",
+         "code":"+32"
+      },
+      {
+         "name":"Belize",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bz.svg",
+         "code":"+501"
+      },
+      {
+         "name":"Benin",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bj.svg",
+         "code":"+229"
+      },
+      {
+         "name":"Bermuda",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bm.svg",
+         "code":"+1441"
+      },
+      {
+         "name":"Bhutan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bt.svg",
+         "code":"+975"
+      },
+      {
+         "name":"Bosnia and Herzegovina",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ba.svg",
+         "code":"+387"
+      },
+      {
+         "name":"Botswana",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bw.svg",
+         "code":"+267"
+      },
+      {
+         "name":"Brazil",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/br.svg",
+         "code":"+55"
+      },
+      {
+         "name":"British Indian Ocean Territory",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/io.svg",
+         "code":"+246"
+      },
+      {
+         "name":"Brunei Darussalam",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bn.svg",
+         "code":"+673"
+      },
+      {
+         "name":"Bulgaria",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bg.svg",
+         "code":"+359"
+      },
+      {
+         "name":"Burkina Faso",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bf.svg",
+         "code":"+226"
+      },
+      {
+         "name":"Burundi",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/bi.svg",
+         "code":"+257"
+      }
+   ],
+   "C":[
+      {
+         "name":"Cambodia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/kh.svg",
+         "code":"+855"
+      },
+      {
+         "name":"Cameroon",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cm.svg",
+         "code":"+237"
+      },
+      {
+         "name":"Canada",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ca.svg",
+         "code":"+1"
+      },
+      {
+         "name":"Cayman Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ky.svg",
+         "code":"+ 345"
+      },
+      {
+         "name":"Central African Republic",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cf.svg",
+         "code":"+236"
+      },
+      {
+         "name":"Chad",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/td.svg",
+         "code":"+235"
+      },
+      {
+         "name":"Chile",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cl.svg",
+         "code":"+56"
+      },
+      {
+         "name":"China",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cn.svg",
+         "code":"+86"
+      },
+      {
+         "name":"Christmas Island",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cx.svg",
+         "code":"+61"
+      },
+      {
+         "name":"Cocos (Keeling) Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cc.svg",
+         "code":"+61"
+      },
+      {
+         "name":"Colombia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/co.svg",
+         "code":"+57"
+      },
+      {
+         "name":"Comoros",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/km.svg",
+         "code":"+269"
+      },
+      {
+         "name":"Cook Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ck.svg",
+         "code":"+682"
+      },
+      {
+         "name":"Costa Rica",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cr.svg",
+         "code":"+506"
+      },
+      {
+         "name":"Croatia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/hr.svg",
+         "code":"+385"
+      },
+      {
+         "name":"Cuba",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cu.svg",
+         "code":"+53"
+      },
+      {
+         "name":"Cyprus",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cy.svg",
+         "code":"+357"
+      },
+      {
+         "name":"Czech Republic",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/cz.svg",
+         "code":"+420"
+      }
+   ],
+   "D":[
+      {
+         "name":"Denmark",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/dk.svg",
+         "code":"+45"
+      },
+      {
+         "name":"Djibouti",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/dj.svg",
+         "code":"+253"
+      },
+      {
+         "name":"Dominica",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/dm.svg",
+         "code":"+1767"
+      },
+      {
+         "name":"Dominican Republic",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/do.svg",
+         "code":"+1849"
+      }
+   ],
+   "E":[
+      {
+         "name":"Ecuador",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ec.svg",
+         "code":"+593"
+      },
+      {
+         "name":"Egypt",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/eg.svg",
+         "code":"+20"
+      },
+      {
+         "name":"El Salvador",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sv.svg",
+         "code":"+503"
+      },
+      {
+         "name":"Equatorial Guinea",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gq.svg",
+         "code":"+240"
+      },
+      {
+         "name":"Eritrea",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/er.svg",
+         "code":"+291"
+      },
+      {
+         "name":"Estonia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ee.svg",
+         "code":"+372"
+      },
+      {
+         "name":"Ethiopia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/et.svg",
+         "code":"+251"
+      }
+   ],
+   "F":[
+      {
+         "name":"Faroe Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/fo.svg",
+         "code":"+298"
+      },
+      {
+         "name":"Fiji",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/fj.svg",
+         "code":"+679"
+      },
+      {
+         "name":"Finland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/fi.svg",
+         "code":"+358"
+      },
+      {
+         "name":"France",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg",
+         "code":"+33"
+      },
+      {
+         "name":"French Guiana",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gf.svg",
+         "code":"+594"
+      },
+      {
+         "name":"French Polynesia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pf.svg",
+         "code":"+689"
+      }
+   ],
+   "G":[
+      {
+         "name":"Gabon",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ga.svg",
+         "code":"+241"
+      },
+      {
+         "name":"Gambia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gm.svg",
+         "code":"+220"
+      },
+      {
+         "name":"Georgia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ge.svg",
+         "code":"+995"
+      },
+      {
+         "name":"Germany",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/de.svg",
+         "code":"+49"
+      },
+      {
+         "name":"Ghana",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gh.svg",
+         "code":"+233"
+      },
+      {
+         "name":"Gibraltar",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gi.svg",
+         "code":"+350"
+      },
+      {
+         "name":"Greece",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gr.svg",
+         "code":"+30"
+      },
+      {
+         "name":"Greenland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gl.svg",
+         "code":"+299"
+      },
+      {
+         "name":"Grenada",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gd.svg",
+         "code":"+1473"
+      },
+      {
+         "name":"Guadeloupe",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gp.svg",
+         "code":"+590"
+      },
+      {
+         "name":"Guam",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gu.svg",
+         "code":"+1671"
+      },
+      {
+         "name":"Guatemala",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gt.svg",
+         "code":"+502"
+      },
+      {
+         "name":"Guernsey",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gg.svg",
+         "code":"+44"
+      },
+      {
+         "name":"Guinea",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gn.svg",
+         "code":"+224"
+      },
+      {
+         "name":"Guinea-Bissau",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gw.svg",
+         "code":"+245"
+      },
+      {
+         "name":"Guyana",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gy.svg",
+         "code":"+595"
+      }
+   ],
+   "H":[
+      {
+         "name":"Haiti",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ht.svg",
+         "code":"+509"
+      },
+      {
+         "name":"Honduras",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/hn.svg",
+         "code":"+504"
+      },
+      {
+         "name":"Hong Kong",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/hk.svg",
+         "code":"+852"
+      },
+      {
+         "name":"Hungary",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/hu.svg",
+         "code":"+36"
+      }
+   ],
+   "I":[
+      {
+         "name":"Iceland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/is.svg",
+         "code":"+354"
+      },
+      {
+         "name":"India",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/in.svg",
+         "code":"+91"
+      },
+      {
+         "name":"Indonesia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/id.svg",
+         "code":"+62"
+      },
+      {
+         "name":"Iraq",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/iq.svg",
+         "code":"+964"
+      },
+      {
+         "name":"Ireland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ie.svg",
+         "code":"+353"
+      },
+      {
+         "name":"Isle of Man",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/im.svg",
+         "code":"+44"
+      },
+      {
+         "name":"Israel",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/il.svg",
+         "code":"+972"
+      },
+      {
+         "name":"Italy",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/it.svg",
+         "code":"+39"
+      }
+   ],
+   "J":[
+      {
+         "name":"Jamaica",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/jm.svg",
+         "code":"+1876"
+      },
+      {
+         "name":"Japan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/jp.svg",
+         "code":"+81"
+      },
+      {
+         "name":"Jersey",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/je.svg",
+         "code":"+44"
+      },
+      {
+         "name":"Jordan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/jo.svg",
+         "code":"+962"
+      }
+   ],
+   "K":[
+      {
+         "name":"Kazakhstan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/kz.svg",
+         "code":"+77"
+      },
+      {
+         "name":"Kenya",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ke.svg",
+         "code":"+254"
+      },
+      {
+         "name":"Kiribati",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ki.svg",
+         "code":"+686"
+      },
+      {
+         "name":"Kuwait",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/kw.svg",
+         "code":"+965"
+      },
+      {
+         "name":"Kyrgyzstan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/kg.svg",
+         "code":"+996"
+      }
+   ],
+   "L":[
+      {
+         "name":"Laos",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/la.svg",
+         "code":"+856"
+      },
+      {
+         "name":"Latvia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lv.svg",
+         "code":"+371"
+      },
+      {
+         "name":"Lebanon",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lb.svg",
+         "code":"+961"
+      },
+      {
+         "name":"Lesotho",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ls.svg",
+         "code":"+266"
+      },
+      {
+         "name":"Liberia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lr.svg",
+         "code":"+231"
+      },
+      {
+         "name":"Liechtenstein",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/li.svg",
+         "code":"+423"
+      },
+      {
+         "name":"Lithuania",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lt.svg",
+         "code":"+370"
+      },
+      {
+         "name":"Luxembourg",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lu.svg",
+         "code":"+352"
+      }
+   ],
+   "M":[
+      {
+         "name":"Madagascar",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mg.svg",
+         "code":"+261"
+      },
+      {
+         "name":"Malawi",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mw.svg",
+         "code":"+265"
+      },
+      {
+         "name":"Malaysia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/my.svg",
+         "code":"+60"
+      },
+      {
+         "name":"Maldives",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mv.svg",
+         "code":"+960"
+      },
+      {
+         "name":"Mali",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ml.svg",
+         "code":"+223"
+      },
+      {
+         "name":"Malta",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mt.svg",
+         "code":"+356"
+      },
+      {
+         "name":"Marshall Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mh.svg",
+         "code":"+692"
+      },
+      {
+         "name":"Martinique",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mq.svg",
+         "code":"+596"
+      },
+      {
+         "name":"Mauritania",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mr.svg",
+         "code":"+222"
+      },
+      {
+         "name":"Mauritius",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mu.svg",
+         "code":"+230"
+      },
+      {
+         "name":"Mayotte",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/yt.svg",
+         "code":"+262"
+      },
+      {
+         "name":"Mexico",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mx.svg",
+         "code":"+52"
+      },
+      {
+         "name":"Moldova",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/md.svg",
+         "code":"+373"
+      },
+      {
+         "name":"Monaco",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mc.svg",
+         "code":"+377"
+      },
+      {
+         "name":"Mongolia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mn.svg",
+         "code":"+976"
+      },
+      {
+         "name":"Montenegro",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/me.svg",
+         "code":"+382"
+      },
+      {
+         "name":"Montserrat",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ms.svg",
+         "code":"+1664"
+      },
+      {
+         "name":"Morocco",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ma.svg",
+         "code":"+212"
+      },
+      {
+         "name":"Mozambique",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mz.svg",
+         "code":"+258"
+      },
+      {
+         "name":"Myanmar",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mm.svg",
+         "code":"+95"
+      }
+   ],
+   "N":[
+      {
+         "name":"Namibia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/na.svg",
+         "code":"+264"
+      },
+      {
+         "name":"Nauru",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/nr.svg",
+         "code":"+674"
+      },
+      {
+         "name":"Nepal",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/np.svg",
+         "code":"+977"
+      },
+      {
+         "name":"Netherlands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/nl.svg",
+         "code":"+31"
+      },
+      {
+         "name":"New Caledonia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/nc.svg",
+         "code":"+687"
+      },
+      {
+         "name":"New Zealand",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/nz.svg",
+         "code":"+64"
+      },
+      {
+         "name":"Nicaragua",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ni.svg",
+         "code":"+505"
+      },
+      {
+         "name":"Niger",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ne.svg",
+         "code":"+227"
+      },
+      {
+         "name":"Nigeria",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ng.svg",
+         "code":"+234"
+      },
+      {
+         "name":"Niue",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/nu.svg",
+         "code":"+683"
+      },
+      {
+         "name":"Norfolk Island",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/nf.svg",
+         "code":"+672"
+      },
+      {
+         "name":"Northern Mariana Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mp.svg",
+         "code":"+1670"
+      },
+      {
+         "name":"Norway",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/no.svg",
+         "code":"+47"
+      }
+   ],
+   "O":[
+      {
+         "name":"Oman",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/om.svg",
+         "code":"+968"
+      }
+   ],
+   "P":[
+      {
+         "name":"Pakistan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pk.svg",
+         "code":"+92"
+      },
+      {
+         "name":"Palau",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pw.svg",
+         "code":"+680"
+      },
+      {
+         "name":"Panama",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pa.svg",
+         "code":"+507"
+      },
+      {
+         "name":"Papua New Guinea",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pg.svg",
+         "code":"+675"
+      },
+      {
+         "name":"Paraguay",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/py.svg",
+         "code":"+595"
+      },
+      {
+         "name":"Peru",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pe.svg",
+         "code":"+51"
+      },
+      {
+         "name":"Philippines",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ph.svg",
+         "code":"+63"
+      },
+      {
+         "name":"Pitcairn",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pn.svg",
+         "code":"+872"
+      },
+      {
+         "name":"Poland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pl.svg",
+         "code":"+48"
+      },
+      {
+         "name":"Portugal",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pt.svg",
+         "code":"+351"
+      },
+      {
+         "name":"Puerto Rico",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pr.svg",
+         "code":"+1939"
+      }
+   ],
+   "Q":[
+      {
+         "name":"Qatar",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/qa.svg",
+         "code":"+974"
+      }
+   ],
+   "R":[
+      {
+         "name":"Romania",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ro.svg",
+         "code":"+40"
+      },
+      {
+         "name":"Russia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ru.svg",
+         "code":"+7"
+      },
+      {
+         "name":"Rwanda",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/rw.svg",
+         "code":"+250"
+      }
+   ],
+   "S":[
+      {
+         "name":"Saint Kitts and Nevis",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/kn.svg",
+         "code":"+1869"
+      },
+      {
+         "name":"Saint Lucia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lc.svg",
+         "code":"+1758"
+      },
+      {
+         "name":"Saint Martin",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/mf.svg",
+         "code":"+590"
+      },
+      {
+         "name":"Saint Pierre and Miquelon",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/pm.svg",
+         "code":"+508"
+      },
+      {
+         "name":"Saint Vincent and the Grenadines",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/vc.svg",
+         "code":"+1784"
+      },
+      {
+         "name":"Samoa",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ws.svg",
+         "code":"+685"
+      },
+      {
+         "name":"San Marino",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sm.svg",
+         "code":"+378"
+      },
+      {
+         "name":"Sao Tome and Principe",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/st.svg",
+         "code":"+239"
+      },
+      {
+         "name":"Saudi Arabia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sa.svg",
+         "code":"+966"
+      },
+      {
+         "name":"Senegal",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sn.svg",
+         "code":"+221"
+      },
+      {
+         "name":"Serbia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/rs.svg",
+         "code":"+381"
+      },
+      {
+         "name":"Seychelles",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sc.svg",
+         "code":"+248"
+      },
+      {
+         "name":"Sierra Leone",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sl.svg",
+         "code":"+232"
+      },
+      {
+         "name":"Singapore",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sg.svg",
+         "code":"+65"
+      },
+      {
+         "name":"Slovakia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sk.svg",
+         "code":"+421"
+      },
+      {
+         "name":"Slovenia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/si.svg",
+         "code":"+386"
+      },
+      {
+         "name":"Solomon Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sb.svg",
+         "code":"+677"
+      },
+      {
+         "name":"Somalia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/so.svg",
+         "code":"+252"
+      },
+      {
+         "name":"South Africa",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/za.svg",
+         "code":"+27"
+      },
+      {
+         "name":"South Georgia and the South Sandwich Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gs.svg",
+         "code":"+500"
+      },
+      {
+         "name":"South Sudan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ss.svg",
+         "code":"+211"
+      },
+      {
+         "name":"Spain",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/es.svg",
+         "code":"+34"
+      },
+      {
+         "name":"Sri Lanka",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/lk.svg",
+         "code":"+94"
+      },
+      {
+         "name":"Sudan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sd.svg",
+         "code":"+249"
+      },
+      {
+         "name":"Suriname",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sr.svg",
+         "code":"+597"
+      },
+      {
+         "name":"Svalbard and Jan Mayen",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sj.svg",
+         "code":"+47"
+      },
+      {
+         "name":"Swaziland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sz.svg",
+         "code":"+268"
+      },
+      {
+         "name":"Sweden",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/se.svg",
+         "code":"+46"
+      },
+      {
+         "name":"Switzerland",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ch.svg",
+         "code":"+41"
+      },
+      {
+         "name":"Syrian Arab Republic",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/sy.svg",
+         "code":"+963"
+      }
+   ],
+   "T":[
+      {
+         "name":"Taiwan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tw.svg",
+         "code":"+886"
+      },
+      {
+         "name":"Tajikistan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tj.svg",
+         "code":"+992"
+      },
+      {
+         "name":"Thailand",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/th.svg",
+         "code":"+66"
+      },
+      {
+         "name":"Timor-Leste",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tl.svg",
+         "code":"+670"
+      },
+      {
+         "name":"Togo",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tg.svg",
+         "code":"+228"
+      },
+      {
+         "name":"Tokelau",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tk.svg",
+         "code":"+690"
+      },
+      {
+         "name":"Tonga",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/to.svg",
+         "code":"+676"
+      },
+      {
+         "name":"Trinidad and Tobago",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tt.svg",
+         "code":"+1868"
+      },
+      {
+         "name":"Tunisia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tn.svg",
+         "code":"+216"
+      },
+      {
+         "name":"Turkey",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tr.svg",
+         "code":"+90"
+      },
+      {
+         "name":"Turkmenistan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tm.svg",
+         "code":"+993"
+      },
+      {
+         "name":"Turks and Caicos Islands",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tc.svg",
+         "code":"+1649"
+      },
+      {
+         "name":"Tuvalu",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/tv.svg",
+         "code":"+688"
+      }
+   ],
+   "U":[
+      {
+         "name":"Uganda",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ug.svg",
+         "code":"+256"
+      },
+      {
+         "name":"Ukraine",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ua.svg",
+         "code":"+380"
+      },
+      {
+         "name":"United Arab Emirates",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ae.svg",
+         "code":"+971"
+      },
+      {
+         "name":"United Kingdom",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg",
+         "code":"+44"
+      },
+      {
+         "name":"Uruguay",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/uy.svg",
+         "code":"+598"
+      },
+      {
+         "name":"Uzbekistan",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/uz.svg",
+         "code":"+998"
+      }
+   ],
+   "V":[
+      {
+         "name":"Vanuatu",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/vu.svg",
+         "code":"+678"
+      },
+      {
+         "name":"Vietnam",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/vn.svg",
+         "code":"+84"
+      }
+   ],
+   "W":[
+      {
+         "name":"Wallis and Futuna",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/wf.svg",
+         "code":"+681"
+      }
+   ],
+   "Y":[
+      {
+         "name":"Yemen",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ye.svg",
+         "code":"+967"
+      }
+   ],
+   "Z":[
+      {
+         "name":"Zambia",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/zm.svg",
+         "code":"+260"
+      },
+      {
+         "name":"Zimbabwe",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/zw.svg",
+         "code":"+263"
+      }
+   ]
+}
 
 export default data;

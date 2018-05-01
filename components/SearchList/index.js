@@ -32,6 +32,8 @@ export default class SearchList extends React.Component {
         <SearchBar title={this.props.title} onChangeText={this.props.onSearch}></SearchBar>
         <SectionList
           keyExtractor={(item, index) => `key-${index}`}
+          removeClippedSubviews={true}
+          scrollEventThrottle={16}
           renderItem={this.props.renderItem}
           renderSectionHeader={this.props.renderSectionHeader}
           sections={this.state.sections}

@@ -8,6 +8,7 @@ import {
   TextInput } from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
 // import { Ionicons } from '@expo/vector-icons';
+import flags from './assets/images/flags'
 import RootNavigation from './navigation/RootNavigation';
 
 export default class App extends React.Component {
@@ -36,12 +37,10 @@ export default class App extends React.Component {
 
   _loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([
-        require('./assets/images/MobileRegistration.png'),
-      ]),
+      Asset.loadAsync(getAssets()),
       Font.loadAsync({
         'circularstd-book': require('./assets/fonts/circularstd-book-webfont.ttf'),
-        'circularstd-medium': require('./assets/fonts/circularstd-medium-webfont.ttf'),
+        'circularstd-medium': require('./assets/fonts/circularstd-medium-webfont.ttf')
       }),
     ]);
   };
@@ -86,6 +85,16 @@ SetDefaultFontFamily = () => {
         };
     }
 }
+
+function getAssets() {
+  var images = [
+    require('./assets/images/MobileRegistration.png'),
+    ...Object.values(flags)
+  ]
+
+  return images;
+}
+
 
 const styles = StyleSheet.create({
   container: {

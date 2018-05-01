@@ -56,7 +56,7 @@ export default class RootNavigator extends React.Component {
          <Stack key="root">
            <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
            <Scene key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
-           <Scene key="countries" component={Countries} title="Countries"/>
+           <Scene initial key="countries" component={Countries} title="Countries"/>
            <Scene key="sign_up" component={SignUp} title="Sign Up"/>
            <Scene key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
            <Scene key="specialities" component={Specialities} title="Specialities"/>
@@ -92,7 +92,7 @@ export default class RootNavigator extends React.Component {
            </Scene>
            <Scene key="chats" component={Chats} title="Chats" />
            <Scene key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
-           <Scene initial key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
+           <Scene key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
          </Stack>
          <Scene key="schedule_picker_lightbox" component={SchedulePicker} />
          <Scene key="patient_schedule_picker_lightbox" component={PatientSchedulePicker} />

@@ -4,12 +4,16 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
+
 import { debounce } from 'lodash'
 import { colors, fontSizes } from '../constants/styles'
 import countries from '../constants/countries'
 import SearchList from '../components/SearchList'
+
+import flags from '../assets/images/flags'
 
 export default class Countries extends React.Component {
   constructor(props) {
@@ -37,11 +41,13 @@ export default class Countries extends React.Component {
   _returnRenderItem() {
     var _this = this; //TODO: hack, closure to store context, replace it with an action when using redux for onPress handler
     return function _renderItem({item, index, section}) {
+        const flag = item.flag.split('/').pop().split('.').shift();
         return (
           <TouchableOpacity onPress={(e) => _this._onSelect(this.item)}>
             <View style={styles['row']}>
-                <Text style={styles['name']}>{item.name}</Text>
-                <Text style={styles['code']}>{item.code}</Text>
+              <Image resizeMethod="resize" style={styles.flag} source={flags[flag]} />
+              <Text style={styles['name']}>{item.name}</Text>
+              <Text style={styles['code']}>{item.code}</Text>
             </View>
           </TouchableOpacity>
         )
@@ -86,18 +92,24 @@ const styles = StyleSheet.create({
     flex: 1
   },
   section: {
-    paddingHorizontal: 10,
-    paddingVertical: 20,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
     backgroundColor: colors.background
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    paddingHorizontal: 10,
-    paddingVertical: 20,
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 16,
     borderBottomWidth: 1,
     borderColor: colors.dark.background,
     backgroundColor: colors.white
+  },
+  flag: {
+    width: 32,
+    height: 24,
+    marginRight: 8,
   },
   name: {
     flex: 6

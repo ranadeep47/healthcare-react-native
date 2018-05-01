@@ -21,7 +21,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.devois.doctor"
+    },
+    "android": {
+      "package": "com.devois.doctor"
     }
   }
 }

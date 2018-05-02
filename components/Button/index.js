@@ -14,7 +14,7 @@ const Button = (props) => {
   let size = props.size || 'md';
   let textStyles = {
     color: background === 'transparent' ? props.border || colors.blue : colors.white,
-    fontSize: fontSizes[size],
+    fontSize: fontSizes[size] - 2,
     textAlign: 'center'
   }
 
@@ -24,7 +24,7 @@ const Button = (props) => {
         styles.button,
         {backgroundColor: background},
         styles[size],
-        props.background === 'transparent' ? {borderWidth: 2, borderColor: props.border || colors.blue} : null,
+        props.background === 'transparent' ? {borderColor: props.border || colors.blue} : {borderColor: props.background || colors.blue},
         props.style]}
       onPress={props.onPress}>
       <Text style={textStyles}>{props.children}</Text>
@@ -34,6 +34,7 @@ const Button = (props) => {
 
 const styles = StyleSheet.create({
   button: {
+    borderWidth: 2,
     borderRadius: 4
   },
 

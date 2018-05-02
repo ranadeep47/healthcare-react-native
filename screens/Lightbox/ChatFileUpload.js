@@ -5,27 +5,17 @@ import {
   Text,
   View
   } from 'react-native';
-import moment from 'moment'
 
 import { colors, fontSizes } from '../../constants/styles'
 import Lightbox from './BaseLightbox'
 
 import Button from '../../components/Button'
-import Avatar from '../../components/Avatar'
-import UserCallSchedule from '../../components/UserCallSchedule'
 
-export default class PatientCancelAppointment extends React.Component {
+export default class ChatFileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: true,
-      doctor: {
-        name: "Adeline Woods",
-        specialisation: "Cardio sciences & cardio vascular surgey",
-        avatar: "https://randomuser.me/api/portraits/men/13.jpg",
-        time: new Date(),
-        callType: "Video Call"
-      },
+      visible: true
     }
   }
 
@@ -39,19 +29,23 @@ export default class PatientCancelAppointment extends React.Component {
 
   render() {
     return (
-      <Lightbox vertical={0.7} align="bottom" visible={this.state.visible}>
+      <Lightbox vertical={0.5} align="bottom" visible={this.state.visible}>
         <View style={styles.container}>
-          <Text style={styles.title}>Are you sure you want to cancel the appointment?</Text>
-          <UserCallSchedule style={styles.doctor} data={this.state.doctor} />
+          <Text style={styles.text}>Where are you files located? </Text>
           <View style={styles.buttons}>
             <View style={[styles.row]}>
-              <Button size="lg" background={colors.red} style={styles.largeButton} onPress={this._cancelAppointment}>
-                Yes, cancel appointment
+              <Button size="lg" style={styles.largeButton} onPress={() => {}}>
+                Choose from uploaded files on $name
+              </Button>
+            </View>
+            <View style={[styles.row]}>
+              <Button size="lg" background="transparent" style={styles.largeButton} onPress={() => {}}>
+                Select files from phone
               </Button>
             </View>
             <View style={[styles.row]}>
               <Button size="lg" background="transparent" style={styles.largeButton} onPress={this.closeModal}>
-                Close
+                Cancel
               </Button>
             </View>
           </View>
@@ -63,19 +57,14 @@ export default class PatientCancelAppointment extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 32,
-    marginTop: 16
+    padding: 32
   },
-  title: {
+  text: {
     fontSize: fontSizes['md'],
-    color: colors.dark.text,
-    marginVertical: 16
-  },
-  doctor: {
-    marginVertical: 16
+    color: colors.dark.text
   },
   buttons: {
-    marginVertical: 16
+    marginVertical: 32
   },
   largeButton: {
     flex: 1

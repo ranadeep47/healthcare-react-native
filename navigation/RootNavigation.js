@@ -33,12 +33,16 @@ import PastAppointments from '../screens/Appointments/PastAppointments'
 import AppointmentRequests from '../screens/Appointments/AppointmentRequests'
 import Chats from '../screens/Chats'
 import FavoriteDoctors from '../screens/FavoriteDoctors'
+import Cardreader from '../screens/Cardreader'
 
 import SchedulePicker from '../screens/Lightbox/SchedulePicker'
 import PatientSchedulePicker from '../screens/Lightbox/PatientSchedulePicker'
 import PatientCancelAppointment from '../screens/Lightbox/PatientCancelAppointment'
 import UserProfileLightbox from '../screens/Lightbox/UserProfile'
 import QuoteLoaderLightbox from '../screens/Lightbox/QuoteLoader'
+import ChatFileUploadLightbox from '../screens/Lightbox/ChatFileUpload'
+import RemoveCardLightbox from '../screens/Lightbox/RemoveCard'
+import PatientConfirmPayLightbox from '../screens/Lightbox/PatientConfirmPay'
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
@@ -56,12 +60,13 @@ export default class RootNavigator extends React.Component {
          <Stack key="root">
            <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
            <Scene key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
-           <Scene initial key="countries" component={Countries} title="Countries"/>
+           <Scene key="countries" component={Countries} title="Countries"/>
            <Scene key="sign_up" component={SignUp} title="Sign Up"/>
            <Scene key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
            <Scene key="specialities" component={Specialities} title="Specialities"/>
            <Scene key="preferences" component={Preferences} title="Preferences"/>
            <Scene key="call_availability" component={CallAvailability} title="Call Availability"/>
+           <Scene initial key="card_reader" component={Cardreader} hideNavBar/>
            <Scene key="appointments" title="Appointments">
              <Tabs
                key="tabs_appointments"
@@ -99,6 +104,9 @@ export default class RootNavigator extends React.Component {
          <Scene key="patient_cancel_appointment_lightbox" component={PatientCancelAppointment} />
          <Scene key="user_profile_lightbox" component={UserProfileLightbox} />
          <Scene key="quote_loader_lightbox" component={QuoteLoaderLightbox} />
+         <Scene key="chat_uplaod_lightbox" component={ChatFileUploadLightbox} />
+         <Scene key="remove_card_lightbox" component={RemoveCardLightbox} />
+         <Scene key="patient_confirm_pay" component={PatientConfirmPayLightbox} />
        </Lightbox>
       </Router>
     )

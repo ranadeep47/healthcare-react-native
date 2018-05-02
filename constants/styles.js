@@ -5,6 +5,7 @@ export const colors = {
   borderWhite: 'rgba(255,255,255,0.9)',
   lightWhite: 'rgba(255,255,255,0.8)',
   fadedWhite: 'rgba(255,255,255,0.4)',
+  fadedWhiteText: 'rgba(255,255,255,0.5)',
   background: 'rgb(248,251,250)',
   greenBlue: 'rgb(0,210,131)',
   green: 'rgb(7,206,135)',
@@ -19,6 +20,7 @@ export const colors = {
   fadedRed: 'rgb(255,241,241)',
   //nested objects eg: colors.dark.text
   dark: {
+    black: 'rgb(37,45,56)',
     text: 'rgb(59,72,89)',
     background: 'rgb(232,240,245)'
   },
@@ -27,7 +29,8 @@ export const colors = {
 export const gradients = {
   grayWhite: ['rgb(243,246,248)', colors.white],
   whiteGray: [colors.white, 'rgb(243,246,248)'],
-  greenBlue: [colors.green, colors.blue]
+  greenBlue: [colors.green, colors.blue],
+  black    : [colors.dark.text, colors.dark.black]
 }
 
 export const fontSizes = {

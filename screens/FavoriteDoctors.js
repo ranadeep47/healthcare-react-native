@@ -45,7 +45,7 @@ export default class FavoriteDoctors extends React.Component {
 
   _onRemoveFromFavorites = (item) => {
     // console.log(item);
-    Actions.push("patient_confirm_pay");
+    // Actions.push("patient_confirm_pay");
   }
 
   _onViewDoctor = (item) => {

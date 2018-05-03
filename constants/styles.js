@@ -7,6 +7,7 @@ export const colors = {
   fadedWhite: 'rgba(255,255,255,0.4)',
   fadedWhiteText: 'rgba(255,255,255,0.5)',
   background: 'rgb(248,251,250)',
+  lightBackground: 'rgb(253,254,254)',
   greenBlue: 'rgb(0,210,131)',
   green: 'rgb(7,206,135)',
   blue: 'rgb(6,179,162)',
@@ -18,6 +19,8 @@ export const colors = {
   lightGray: 'rgba(111,123,135,0.2)',
   red: 'rgb(230,103,116)',
   fadedRed: 'rgb(255,241,241)',
+  black: 'rgb(0,0,0)',
+  lightBlack: 'rgba(0,0,0,0.87)',
   //nested objects eg: colors.dark.text
   dark: {
     black: 'rgb(37,45,56)',

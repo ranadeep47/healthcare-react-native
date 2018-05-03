@@ -109,7 +109,20 @@ export default class DatePicker extends React.Component {
             // textMonthFontWeight: 'bold',
             textDayFontSize: fontSizes.sm,
             textMonthFontSize: fontSizes.md,
-            textDayHeaderFontSize: fontSizes.sm
+            textDayHeaderFontSize: fontSizes.sm,
+
+            'stylesheet.day.basic': {
+              base: {
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 32,
+                height: 32
+              },
+              selectedText: {
+                color: colors.white,
+                paddingBottom: 3
+              }
+            }
           }}
           />
       </View>

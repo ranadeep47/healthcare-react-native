@@ -62,7 +62,7 @@ export default class RootNavigator extends React.Component {
        <Lightbox key="lightbox" hideNavBar>
          <Stack key="root">
            <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
-           <Scene key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
+           <Scene initial key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
            <Scene key="countries" component={Countries} title="Countries"/>
            <Scene key="sign_up" component={SignUp} title="Sign Up"/>
            <Scene key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
@@ -71,7 +71,7 @@ export default class RootNavigator extends React.Component {
            <Scene key="call_availability" component={CallAvailability} title="Call Availability"/>
            <Scene key="card_reader" component={Cardreader} hideNavBar/>
            <Scene key="incoming_call" component={IncomingCall} hideNavBar/>
-           <Scene initial key="call_feedback" component={CallFeedback} hideNavBar/>
+           <Scene key="call_feedback" component={CallFeedback} hideNavBar/>
            <Scene key="appointments" title="Appointments">
              <Tabs
                key="tabs_appointments"

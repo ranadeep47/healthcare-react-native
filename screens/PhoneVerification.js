@@ -4,17 +4,22 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 
-import { LinearGradient } from 'expo';
+import { Actions } from 'react-native-router-flux';
+import { LinearGradient, DangerZone } from 'expo';
+const { Localization } = DangerZone;
 
 import { colors, fontSizes } from '../constants/styles'
+import Countries from '../constants/countries'
+import Flags from '../assets/images/flags'
+import RightArrow from '../assets/images/right_arrow.png'
 
 import Button from '../components/Button'
 import MobileInput from '../components/MobileInput'
 import TextField from '../components/TextField'
-
 
 const {width, height} = Dimensions.get('window');
 
@@ -24,52 +29,66 @@ export default class PhoneVerification extends React.Component {
     this.state = {
       mobileNumber: '',
       mobileSubmitted: false,
-      mobileError: false
+      mobileError: false,
+      country: {}
     };
-
-    this._onMobileNumberChange = this._onMobileNumberChange.bind(this);
-    this._onMobileNumberSubmit = this._onMobileNumberSubmit.bind(this);
-    this._onOTPSubmit = this._onOTPSubmit.bind(this);
   }
 
-  static navigationOptions = {
-    header: null,
-  };
+  async componentWillMount() {
+    const countryCode = await Localization.getCurrentDeviceCountryAsync();
+    const country = this.getCountryInfo(this.props.countryCode || countryCode);
+    this.setState({country});
+  }
 
-  _validateMobile(mobileNumber) {
+  componentWillReceiveProps(newProps, oldProps) {
+    if(newProps.countryCode !== oldProps.countryCode) {
+      this.setState({country: this.getCountryInfo(newProps.countryCode)});
+    }
+  }
+
+  _validateMobile = (mobileNumber) => {
     //TODO scope for improvement and add more checks
     if(mobileNumber.length === 10 && /^\d{10}$/.test(mobileNumber)) return true
     return false;
   }
 
-  _onMobileNumberChange(mobileNumber) {
+  _onMobileNumberChange = (mobileNumber) => {
     //Validate mobile, if valid, enter setstate
     if(this._validateMobile(mobileNumber)) {
       this.setState({mobileNumber, mobileError: false});
     }
   }
 
-  _onMobileNumberSubmit() {
+  _onMobileNumberSubmit = () => {
     this.setState({
       mobileError: this.state.mobileNumber ? false : true,
       mobileSubmitted: this.state.mobileNumber ? true: false
     });
   }
 
-  _onOTPSubmit() {
+  _onOTPSubmit= () => {
 
+  }
+
+  _showCountries = () => {
+    Actions.push("countries");
   }
 
   _renderMobileForm() {
     return (
       <View>
         <Text style={styles['formTitle']}>Let{"'"}s get started</Text>
-        <Text style={{color: colors.text, textAlign: 'center', paddingVertical: 10,paddingHorizontal: 20}}>
+        <Text style={{color: colors.text, textAlign: 'center', paddingHorizontal: 16}}>
           To keep your account secure, please enter your phone number
         </Text>
-        <View style={{marginTop: 60}}>
-          <Text style={{color: colors.text}}>MOBILE NUMBER</Text>
-          <MobileInput error={this.state.mobileError} onChange={this._onMobileNumberChange} countryCode="+91"></MobileInput>
+        <TouchableOpacity onPress={this._showCountries} style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginVertical: 24}}>
+          <Image style={styles.flag} source={this.state.country.flag} />
+          <Text style={{textAlign: 'center'}}>{this.state.country.name}</Text>
+          <Image style={{marginLeft: 48}} source={RightArrow} />
+        </TouchableOpacity>
+        <View>
+          <Text style={{color: colors.text, marginVertical: 8}}>MOBILE NUMBER</Text>
+          <MobileInput error={this.state.mobileError} onChange={this._onMobileNumberChange} countryCode={this.state.country.code}></MobileInput>
         </View>
         <Button onPress={this._onMobileNumberSubmit} style={{marginVertical: 20}} size='lg'>Enter your phone number</Button>
       </View>
@@ -97,14 +116,23 @@ export default class PhoneVerification extends React.Component {
     )
   }
 
+  getCountryInfo(countryCode) {
+    const country = Countries[countryCode[0]].filter((country) => {
+      return country.flag.split('/').pop().search(countryCode.toLowerCase()) >= 0;
+    }).pop();
+
+    if(!country) {
+      //TODO: think about the list of allowed countries
+    }
+    return {code: country.code, name: country.name, flag: Flags[countryCode.toLowerCase()]}
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.gradientBackground}>
-          <LinearGradient style={styles.gradient} colors={[colors.green, colors.blue]}>
-            <Image source={require('../assets/images/MobileRegistration.png')} />
-          </LinearGradient>
-        </View>
+        <LinearGradient style={styles.gradient} colors={[colors.green, colors.blue]}>
+          <Image source={require('../assets/images/MobileRegistration.png')} />
+        </LinearGradient>
         <View style={styles['formWrapper']}>
           {this.state.mobileSubmitted ? this._renderOTPForm() : this._renderMobileForm() }
         </View>
@@ -120,19 +148,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.white
   },
-  gradientBackground: {
-
-  },
   gradient: {
-    paddingTop: 100,
-    flex: 0.7,
+    paddingTop: 60,
+    flex: 0.6,
     flexDirection: 'row',
     justifyContent: 'center',
     width: width
   },
   formWrapper: {
     ...StyleSheet.absoluteFillObject,
-    top: 240,
+    top: 220,
     backgroundColor: colors.white,
     marginHorizontal: 30
   },
@@ -140,7 +165,13 @@ const styles = StyleSheet.create({
     fontSize: fontSizes['x-lg'],
     textAlign: 'center',
     color: colors.dark.text,
-    paddingVertical: 10
+    marginVertical: 24
+  },
+  flag: {
+    width: 32,
+    height: 24,
+    marginRight: 16,
+    borderRadius: 2
   },
   otpFormContainer: {
     marginTop: 80,

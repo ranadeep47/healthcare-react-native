@@ -1072,6 +1072,11 @@ let data =
          "code":"+380"
       },
       {
+         "name":"United States of America",
+         "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/us.svg",
+         "code":"+1"
+      },
+      {
          "name":"United Arab Emirates",
          "flag":"https://lipis.github.io/flag-icon-css/flags/4x3/ae.svg",
          "code":"+971"

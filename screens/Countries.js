@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native';
-
+import { Actions } from 'react-native-router-flux';
 import { debounce } from 'lodash'
 import { colors, fontSizes } from '../constants/styles'
 import countries from '../constants/countries'
@@ -34,8 +34,9 @@ export default class Countries extends React.Component {
   };
 
   _onSelect(item) {
-    console.log(item)
-    //TODO: navigate
+    const countryCode = item.flag.split('/').pop().split('.').shift().toUpperCase();
+    Actions.popTo("phone_verification");
+    Actions.refresh({countryCode}) //TODO: https://github.com/aksonov/react-native-router-flux/issues/2621
   }
 
   _returnRenderItem() {

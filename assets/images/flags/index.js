@@ -205,6 +205,7 @@ const flags = {
    tv: require('./png/tv.png'),
    ug: require('./png/ug.png'),
    ua: require('./png/ua.png'),
+   us: require('./png/us.png'),
    ae: require('./png/ae.png'),
    gb: require('./png/gb.png'),
    uy: require('./png/uy.png'),

@@ -6,7 +6,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-
+import * as Progress from 'react-native-progress';
 import { colors, fontSizes } from '../../constants/styles'
 
 const Button = (props) => {
@@ -18,6 +18,13 @@ const Button = (props) => {
     textAlign: 'center'
   }
 
+  let loading = props.isLoading ? (
+    <View style={styles.spinner}>
+      <Progress.CircleSnail size={28} indeterminate={true} color={textStyles.color} />
+    </View>
+  ) : null;
+
+  console.log(textStyles);
   return (
     <TouchableOpacity
       style={[
@@ -25,8 +32,10 @@ const Button = (props) => {
         {backgroundColor: background},
         styles[size],
         props.background === 'transparent' ? {borderColor: props.border || colors.blue} : {borderColor: props.background || colors.blue},
+        // {pointerEvents: props.isLoading ? 'none' : 'auto'},
         props.style]}
       onPress={props.onPress}>
+      {loading}
       <Text style={textStyles}>{props.children}</Text>
     </TouchableOpacity>
   )
@@ -35,7 +44,10 @@ const Button = (props) => {
 const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
-    borderRadius: 4
+    borderRadius: 4,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
   sm: {
@@ -52,7 +64,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 16,
   },
-
+  spinner: {
+    height: 28,
+    height: 28,
+    marginRight: 32
+  },
 })
 
 export default Button

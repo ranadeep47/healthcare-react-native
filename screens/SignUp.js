@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Modal
 } from 'react-native';
 
 import { LinearGradient } from 'expo'
@@ -16,11 +17,18 @@ import RangeSlider from '../components/RangeSlider'
 export default class SignUp extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      submitted: false
+    }
   }
 
   static navigationOptions = {
     //TODO
   };
+
+  _onSubmit = () => {
+    this.setState({submitted: true}); //TODO ajax response
+  }
 
   render() {
     var bloodGroups = [
@@ -33,6 +41,10 @@ export default class SignUp extends React.Component {
       {title: 'O+ve'},
       {title: 'O-ve'}
     ]
+
+    const overlay = this.state.submitted ? (
+      <View style={styles.overlay}></View>
+    ) : null
 
     return (
       <View style={styles['container']}>
@@ -56,8 +68,9 @@ export default class SignUp extends React.Component {
         <LinearGradient
          style={styles['bottomCard']}
          colors={gradients.whiteGray}>
-          <Button size='lg' onPress={() => {}} >Create account</Button>
+          <Button isLoading={this.state.submitted} size='lg' onPress={this._onSubmit} >Create account</Button>
         </LinearGradient>
+        {overlay}
       </View>
 
     )
@@ -87,7 +100,7 @@ const styles = StyleSheet.create({
   },
   form: {
     flex: 5,
-    paddingHorizontal: 24    
+    paddingHorizontal: 24
   },
   bottomCard: {
     flex: 0.8,
@@ -102,5 +115,9 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     color: colors.text
   },
-
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 10,
+    backgroundColor: colors.fadedWhiteText
+  }
 })

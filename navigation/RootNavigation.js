@@ -26,6 +26,7 @@ import Specialities from '../screens/Specialities';
 import Preferences from '../screens/Preferences';
 import CallAvailability from '../screens/CallAvailability';
 import DoctorDetail from '../screens/DoctorDetail';
+import FilterDoctors from '../screens/FilterDoctors';
 
 import Appointments from '../screens/Appointments'
 import UpcomingAppointments from '../screens/Appointments/UpcomingAppointments'
@@ -62,13 +63,14 @@ export default class RootNavigator extends React.Component {
        <Lightbox key="lightbox" hideNavBar>
          <Stack key="root">
            <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
-           <Scene initial key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
+           <Scene key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
            <Scene key="countries" component={Countries} title="Countries"/>
            <Scene key="sign_up" component={SignUp} title="Sign Up"/>
            <Scene key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
            <Scene key="specialities" component={Specialities} title="Specialities"/>
            <Scene key="preferences" component={Preferences} title="Preferences"/>
            <Scene key="call_availability" component={CallAvailability} title="Call Availability"/>
+           <Scene initial key="filter_doctors" component={FilterDoctors} title="Filters"/>           
            <Scene key="card_reader" component={Cardreader} hideNavBar/>
            <Scene key="incoming_call" component={IncomingCall} hideNavBar/>
            <Scene key="call_feedback" component={CallFeedback} hideNavBar/>

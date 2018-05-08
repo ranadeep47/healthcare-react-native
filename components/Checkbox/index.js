@@ -11,7 +11,7 @@ import { colors, fontSizes } from '../../constants/styles'
 import Tickmark from '../SvgIcons/Tickmark'
 
 //<Checkbox shape="circle" onChange={(e) => console.log(e)} title="Monday" />
-//TODO: props: onChange, title, checked, shape(circle,square)
+//TODO: props: onChange, title, checked, shape(circle,square) style tickStyle
 export default class Checkbox extends React.Component {
   constructor(props) {
     super(props);
@@ -28,13 +28,14 @@ export default class Checkbox extends React.Component {
     let tick = this.props.shape === "circle" || this.state.checked ? <Tickmark fill={colors.white} style={{padding: 2}} /> : null;
 
     return (
-      <View style={[styles['container'], this.props.style]}>
+      <View style={[styles['container']]}>
         <TouchableOpacity onPress={this._onChange.bind(this)} style={styles['container']}>
           <View style={[
             styles['box'],
             styles[this.props.shape],
             !this.state.checked ? {backgroundColor: colors.white} : null,
-            this.props.shape === 'circle' && !this.state.checked ? {backgroundColor: colors.lightText, borderColor: colors.lightText} : null
+            this.props.shape === 'circle' && !this.state.checked ? {backgroundColor: colors.lightText, borderColor: colors.lightText} : null,
+            this.props.style,
           ]}>
             {tick}
           </View>

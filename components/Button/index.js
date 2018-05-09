@@ -23,8 +23,7 @@ const Button = (props) => {
       <Progress.CircleSnail size={28} indeterminate={true} color={textStyles.color} />
     </View>
   ) : null;
-
-  console.log(textStyles);
+  
   return (
     <TouchableOpacity
       style={[

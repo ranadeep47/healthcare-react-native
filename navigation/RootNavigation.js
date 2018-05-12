@@ -33,6 +33,8 @@ import Appointments from '../screens/Appointments'
 import UpcomingAppointments from '../screens/Appointments/UpcomingAppointments'
 import PastAppointments from '../screens/Appointments/PastAppointments'
 import AppointmentRequests from '../screens/Appointments/AppointmentRequests'
+
+import Chat from '../screens/Chat'
 import Chats from '../screens/Chats'
 import FavoriteDoctors from '../screens/FavoriteDoctors'
 import Cardreader from '../screens/Cardreader'
@@ -77,43 +79,16 @@ export default class RootNavigator extends React.Component {
              <Scene key="specialities" component={Specialities} title="Specialities"/>
              <Scene key="preferences" component={Preferences} title="Preferences"/>
              <Scene key="filter_doctors" component={FilterDoctors} title="Filters"/>
-             <Scene key="appointments" title="Appointments">
-               <Tabs
-                 key="tabs_appointments"
-                 activeTintColor={colors.blue}
-                 inactiveTintColor={colors.lightText}
-                 labelStyle={{fontSize: fontSizes['sm'], flex: 1, marginBottom: 12}}
-                 tabStyle={{}}
-                 activeBackgroundColor={colors.background}
-                 inactiveBackgroundColor={colors.background}
-                 tabBarStyle={{marginTop: 20}}
-                 swipeEnabled={true}>
-                 <Scene
-                   hideNavBar
-                   key="upcoming_appointments"
-                   component={UpcomingAppointments}
-                   tabBarLabel="Upcoming"/>
-                 <Scene
-                   hideNavBar
-                   key="past_appointments"
-                   component={PastAppointments}
-                   tabBarLabel="Past"/>
-                 <Scene
-                   hideNavBar
-                   key="appointments_requests"
-                   component={AppointmentRequests}
-                   tabBarLabel="Requests"/>
-               </Tabs>
-             </Scene>
+             <Scene key="appointments" title="Appointments" component={Appointments} />
+             <Scene initial key="chat" component={Chat} back/>
              <Drawer
-              initial
               hideNavBar
               key="drawer"
               contentComponent={DrawerContent}
               drawerImage={MenuIcon}
               drawerWidth={0.7 * width}>
               <Scene key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
-              <Scene initial key="chats" component={Chats} title="Chats" />
+              <Scene key="chats" component={Chats} title="Chats" />
               <Scene key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
             </Drawer>
            </Stack>
@@ -138,3 +113,33 @@ export default class RootNavigator extends React.Component {
     )
   }
 }
+
+/*
+<Tabs
+  hideNavBar
+  key="tabs_appointments"
+  activeTintColor={colors.blue}
+  inactiveTintColor={colors.lightText}
+  labelStyle={{fontSize: fontSizes['sm'], flex: 1, marginBottom: 12}}
+  tabStyle={{}}
+  activeBackgroundColor={colors.background}
+  inactiveBackgroundColor={colors.background}
+  tabBarStyle={{marginTop: 20}}
+  swipeEnabled={true}>
+  <Scene
+    hideNavBar
+    key="upcoming_appointments"
+    component={UpcomingAppointments}
+    tabBarLabel="Upcoming"/>
+  <Scene
+    hideNavBar
+    key="past_appointments"
+    component={PastAppointments}
+    tabBarLabel="Past"/>
+  <Scene
+    hideNavBar
+    key="appointments_requests"
+    component={AppointmentRequests}
+    tabBarLabel="Requests"/>
+</Tabs>
+*/

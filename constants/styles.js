@@ -25,7 +25,8 @@ export const colors = {
   dark: {
     black: 'rgb(37,45,56)',
     text: 'rgb(59,72,89)',
-    background: 'rgb(232,240,245)'
+    background: 'rgb(232,240,245)',
+    gray: 'rgb(243,246,248)'
   },
 }
 

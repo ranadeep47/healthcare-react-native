@@ -29,10 +29,6 @@ export default class Countries extends React.Component {
     this.filterCountries = this.filterCountries.bind(this);
   }
 
-  static navigationOptions = {
-    //TODO
-  };
-
   _onSelect(item) {
     const countryCode = item.flag.split('/').pop().split('.').shift().toUpperCase();
     Actions.popTo("phone_verification");

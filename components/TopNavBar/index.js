@@ -91,7 +91,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16
   },
   center: {
-
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
   title: {
     color: colors.white,

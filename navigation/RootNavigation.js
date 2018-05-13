@@ -34,6 +34,7 @@ import UpcomingAppointments from '../screens/Appointments/UpcomingAppointments'
 import PastAppointments from '../screens/Appointments/PastAppointments'
 import AppointmentRequests from '../screens/Appointments/AppointmentRequests'
 
+import SelectUploadedFiles from '../screens/SelectUploadedFiles'
 import Chat from '../screens/Chat'
 import Chats from '../screens/Chats'
 import FavoriteDoctors from '../screens/FavoriteDoctors'
@@ -80,7 +81,8 @@ export default class RootNavigator extends React.Component {
              <Scene key="preferences" component={Preferences} title="Preferences"/>
              <Scene key="filter_doctors" component={FilterDoctors} title="Filters"/>
              <Scene key="appointments" title="Appointments" component={Appointments} />
-             <Scene initial key="chat" component={Chat} back/>
+             <Scene key="chat" component={Chat} back/>
+             <Scene initial key="select_uploaded_files" component={SelectUploadedFiles} title="Select the files"/>
              <Drawer
               hideNavBar
               key="drawer"

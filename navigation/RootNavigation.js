@@ -41,6 +41,10 @@ import FavoriteDoctors from '../screens/FavoriteDoctors'
 import Cardreader from '../screens/Cardreader'
 import IncomingCall from '../screens/IncomingCall'
 import CallFeedback from '../screens/CallFeedback'
+import PatientBookings from '../screens/Bookings'
+import DoctorProfile from '../screens/DoctorProfile'
+import PatientProfile from '../screens/PatientProfile'
+import Misc from '../screens/Misc'
 
 import DrawerContent from '../components/DrawerContent'
 
@@ -70,7 +74,6 @@ export default class RootNavigator extends React.Component {
       <Router>
        <Lightbox key="lightbox" hideNavBar>
          <Stack key="root" hideNavBar>
-
            <Stack key="navbar" navBar={TopNavBar}>
              <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
              <Scene key="countries" component={Countries} title="Countries"/>
@@ -82,16 +85,21 @@ export default class RootNavigator extends React.Component {
              <Scene key="filter_doctors" component={FilterDoctors} title="Filters"/>
              <Scene key="appointments" title="Appointments" component={Appointments} />
              <Scene key="chat" component={Chat} back/>
-             <Scene initial key="select_uploaded_files" component={SelectUploadedFiles} title="Select the files"/>
+             <Scene key="select_uploaded_files" component={SelectUploadedFiles} title="Select the files"/>
              <Drawer
+              initial
               hideNavBar
               key="drawer"
               contentComponent={DrawerContent}
               drawerImage={MenuIcon}
               drawerWidth={0.7 * width}>
+              <Scene key="patient_bookings" title="Bookings" component={PatientBookings} />
               <Scene key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
               <Scene key="chats" component={Chats} title="Chats" />
               <Scene key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
+              <Scene key="doctor_profile" component={DoctorProfile} title="Profile"/>
+              <Scene key="patient_profile" component={PatientProfile} title="Profile"/>
+              <Scene initial key="misc" component={Misc} title="Misc"/>
             </Drawer>
            </Stack>
 

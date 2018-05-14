@@ -4,15 +4,16 @@
   "dependencies": {
     "@ptomasroos/react-native-multi-slider": "0.0.12",
     "expo": "^26.0.0",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.10",
     "moment": "^2.22.1",
-    "moment-timezone": "^0.5.16",
-    "react": "16.3.0-alpha.1",
+    "moment-timezone": "^0.5.17",
+    "react": "^16.3.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz",
     "react-native-calendars": "^1.19.3",
     "react-native-progress": "^3.4.0",
     "react-native-rating": "^2.0.4",
     "react-native-router-flux": "^4.0.0-beta.28",
-    "react-navigation": "^1.5.11"
+    "react-native-tab-view": "0.0.77",
+    "react-navigation": "^2.0.1"
   }
 }

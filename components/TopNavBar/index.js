@@ -67,7 +67,7 @@ export default class TopNavBar extends React.Component {
       <View></View>
     )
   }
-
+  
   render() {
     return (
         <LinearGradient

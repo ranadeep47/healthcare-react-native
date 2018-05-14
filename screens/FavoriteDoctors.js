@@ -69,6 +69,7 @@ export default class FavoriteDoctors extends React.Component {
   }
 
   render() {
+    
     return (
       <View style={styles['container']}>
         <FlatList

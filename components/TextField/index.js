@@ -10,7 +10,7 @@ import { colors, fontSizes } from '../../constants/styles'
 
 const TextField = (props) => {
   let label = null;
-  if(props.label) label = (<Text style={styles.label}>{props.label.toUpperCase()}</Text>);
+  if(props.label) label = (<Text style={styles.label}>{props.label}</Text>);
   return (
     <View style={[styles['container'], props.style]}>
       {label}

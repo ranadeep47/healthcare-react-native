@@ -62,12 +62,12 @@ export default class Misc extends React.Component {
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 1}}>
           <TextField
-            label="First name"
+            label="FIRST NAME"
             style={{flex: 1, marginRight: 8}}
             inputStyle={{}}
             placeholder="First name"/>
           <TextField
-            label="Last name"
+            label="LAST NAME"
             style={{flex: 1, marginLeft: 8}}
             inputStyle={{}}
             placeholder="Last name"/>

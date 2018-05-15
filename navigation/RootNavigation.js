@@ -97,9 +97,9 @@ export default class RootNavigator extends React.Component {
               <Scene key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
               <Scene key="chats" component={Chats} title="Chats" />
               <Scene key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
-              <Scene key="doctor_profile" component={DoctorProfile} title="Profile"/>
+              <Scene initial key="doctor_profile" component={DoctorProfile} title="Profile"/>
               <Scene key="patient_profile" component={PatientProfile} title="Profile"/>
-              <Scene initial key="misc" component={Misc} title="Misc"/>
+              <Scene key="misc" component={Misc} title="Misc"/>
             </Drawer>
            </Stack>
 

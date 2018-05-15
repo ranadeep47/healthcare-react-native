@@ -52,7 +52,7 @@ export default class FilterDoctors extends React.Component {
                     fontFamily: language.checked ? 'circularstd-medium' : 'circularstd-book'}}>
                     {language.name}
                   </Text>
-                  <Checkbox style={styles.checkbox} checked={language.checked} shape="square" onChange={this._onChange.bind(this, i)} />
+                  <Checkbox checkMarkStyle={styles.checkbox} checked={language.checked} shape="square" onChange={this._onChange.bind(this, i)} />
                 </View>
               )
             })

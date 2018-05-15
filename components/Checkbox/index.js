@@ -28,14 +28,14 @@ export default class Checkbox extends React.Component {
     let tick = this.props.shape === "circle" || this.state.checked ? <Tickmark fill={colors.white} style={{padding: 2}} /> : null;
 
     return (
-      <View style={[styles['container']]}>
+      <View style={[styles['container'], this.props.style]}>
         <TouchableOpacity onPress={this._onChange.bind(this)} style={styles['container']}>
           <View style={[
             styles['box'],
             styles[this.props.shape],
             !this.state.checked ? {backgroundColor: colors.white} : null,
             this.props.shape === 'circle' && !this.state.checked ? {backgroundColor: colors.lightText, borderColor: colors.lightText} : null,
-            this.props.style,
+            this.props.checkMarkStyle
           ]}>
             {tick}
           </View>

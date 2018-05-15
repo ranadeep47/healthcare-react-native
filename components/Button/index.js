@@ -23,7 +23,7 @@ const Button = (props) => {
       <Progress.CircleSnail size={28} indeterminate={true} color={textStyles.color} />
     </View>
   ) : null;
-  
+
   return (
     <TouchableOpacity
       style={[
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 
   md: {
     paddingHorizontal: 24,
-    paddingVertical: 16,
+    paddingVertical: 12,
   },
 
   lg: {

@@ -16,6 +16,7 @@ import Basic from './Basic'
 import Settings from './Settings'
 
 import Avatar from '../../components/Avatar'
+import Button from '../../components/Button'
 
 const initialLayout = {
   height: 0,
@@ -63,16 +64,23 @@ _renderScene = SceneMap({
   settings: Settings,
 });
 
+_onLogout = () => {
+
+}
+
   render() {
     const { patient } = this.state;
     return (
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', padding: 16}}>
-          <Avatar source={patient.avatar} />
-          <View style={{marginHorizontal: 16}}>
-            <Text style={{color: colors.dark.text, fontSize: fontSizes['md']}}>{patient.name}</Text>
-            <Text style={{color: colors.text, fontSize: fontSizes['sm'], marginVertical: 4}}>{patient.age}</Text>
+        <View style={styles.profile}>
+          <View style={{flexDirection: 'row'}}>
+            <Avatar source={patient.avatar} />
+            <View style={{marginHorizontal: 16}}>
+              <Text style={{color: colors.dark.text, fontSize: fontSizes['md']}}>{patient.name}</Text>
+              <Text style={{color: colors.text, fontSize: fontSizes['sm'], marginVertical: 4}}>{patient.age}</Text>
+            </View>
           </View>
+          <Button size="md" onPress={this._onLogout} background="transparent" style={styles.logout}>Logout</Button>
         </View>
         <TabViewAnimated
          useNativeDriver
@@ -93,10 +101,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background
   },
+  profile:{
+    flexDirection: 'row',
+    paddingHorizontal: 32,
+    paddingVertical: 16,
+    justifyContent: 'space-between'
+  },
   avatar: {
     width: 50,
     height: 50,
     borderRadius: 50/2
+  },
+  logout: {
+
+    alignSelf: 'flex-start'
   },
   tabs: {
 

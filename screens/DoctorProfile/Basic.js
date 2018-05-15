@@ -29,14 +29,5 @@ export default class Basic extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  list: {
-    flex: 1
-  },
-  card: {
-    backgroundColor: colors.white,
-    borderBottomWidth: 1,
-    borderColor: colors.separator,
-    padding: 16
   }
 })

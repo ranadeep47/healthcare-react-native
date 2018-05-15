@@ -19,12 +19,14 @@ export default class Switch extends React.Component {
     this.state.moveKnob = new Animated.Value(this.state.on ? 1 : 0)
   }
 
-  _onSwitch() {
+  _onSwitch() {    
     this.setState({on : !this.state.on}, () => {
       Animated.timing(this.state.moveKnob, {
         toValue: this.state.on ? 1 : 0,
         duration: 400
-      }).start();
+      }).start(() => {
+        this.props.onSwitch(this.state.on);
+      });
     });
   }
 
@@ -35,7 +37,7 @@ export default class Switch extends React.Component {
     })
 
     return (
-      <View style={styles['container']}>
+      <View style={[styles['container'], this.props.style]}>
         <View style={[styles['bar'], this.state.on ? {backgroundColor: colors.blue} : null]}>
           <TouchableOpacity onPress={this._onSwitch.bind(this)}>
             <Animated.View style={[styles['knob'], {transform: [{translateX: moveKnob}]}]}></Animated.View>

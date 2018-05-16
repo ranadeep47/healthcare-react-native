@@ -14,7 +14,7 @@ const Link = (props) => {
     <TouchableOpacity
       style={[props.style]}
       onPress={props.onPress}>
-      <Text style={[{color: colors.blue, padding: 8}, props.textStyle]}>{props.children}</Text>
+      <Text style={[{color: colors.blue, padding: 8, fontSize: fontSizes['md']}, props.textStyle]}>{props.children}</Text>
     </TouchableOpacity>
   )
 }

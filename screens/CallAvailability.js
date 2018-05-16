@@ -14,6 +14,7 @@ import { colors, fontSizes, gradients } from '../constants/styles'
 import RangeSlider from '../components/RangeSlider'
 import Checkbox from '../components/Checkbox'
 import Button from '../components/Button'
+import Link from '../components/Link'
 
 export default class CallAvailability extends React.Component {
   constructor(props) {
@@ -31,10 +32,6 @@ export default class CallAvailability extends React.Component {
       }
     };
   }
-
-  static navigationOptions = {
-    //TODO
-  };
 
   onDayToggle(day) {
     let timings = Object.assign(this.state.timings);
@@ -70,7 +67,7 @@ export default class CallAvailability extends React.Component {
               return (
                 <View key={i} style={styles['card']}>
                   <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                    <Checkbox shape='square' title={day} checked={this.state.timings[day].selected} onChange={this.onDayToggle.bind(this, day)}/>
+                    <Checkbox checkMarkStyle={styles.checkbox} shape='square' title={day} checked={this.state.timings[day].selected} onChange={this.onDayToggle.bind(this, day)}/>
                     <Text style={{marginTop: 7, fontSize: fontSizes['md']}}>{startTime} - {stopTime}</Text>
                   </View>
                   <View style={{flexDirection: 'row', justifyContent: 'center', marginTop: 24}}>
@@ -80,12 +77,11 @@ export default class CallAvailability extends React.Component {
               )
             })}
           </View>
-          <View>
-            <LinearGradient colors={gradients['whiteGray']} style={styles['bottomCard']}>
-              <Button size='lg'>Continue</Button>
-            </LinearGradient>
-          </View>
         </ScrollView>
+        <LinearGradient colors={gradients['whiteGray']} style={styles['bottomCard']}>
+          <Button onPress={() => {}} size='lg'>Continue</Button>
+          <Link style={{alignSelf: 'center', marginVertical: 8}} onPress={() => {}}>Skip now, do it later from profile</Link>
+        </LinearGradient>
       </View>
     )
   }
@@ -93,15 +89,18 @@ export default class CallAvailability extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: colors.white
   },
   body: {
-    flex: 4,
+
+  },
+  checkbox: {
+    transform: [{scale: 0.8}]
   },
   bottomCard: {
-    flex: 0.75,
     paddingHorizontal: 32,
-    paddingVertical: 20,
+    paddingTop: 24,
     justifyContent: 'center'
   },
   card: {

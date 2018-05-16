@@ -17,8 +17,8 @@ import TimeIcon from '../../assets/images/TimeIcon.png'
 import UserCallSchedule from '../../components/UserCallSchedule'
 import Button from '../../components/Button'
 import Avatar from '../../components/Avatar'
-
 import Alert from '../../components/Alert'
+import { Actions } from 'react-native-router-flux';
 
 export default class RequestedBookings extends React.Component {
   constructor(props) {
@@ -52,7 +52,7 @@ export default class RequestedBookings extends React.Component {
   }
 
   _onAction(action, data) {
-    //TODO
+    // Actions.push('patient_cancel_appointment_lightbox')
   }
 
   _renderFooter(data) {

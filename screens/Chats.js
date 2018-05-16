@@ -15,6 +15,8 @@ import Button from '../components/Button'
 import ChatRow from '../components/ChatRow'
 import FeedbackCard from '../components/FeedbackCard'
 
+import BottomNavigation from '../components/BottomNavigation'
+
 export default class Chats extends React.Component {
   constructor(props) {
     super(props);
@@ -66,6 +68,7 @@ export default class Chats extends React.Component {
           style={styles.list}
           data={this.state.chats}
           renderItem={this._renderItem}/>
+        <BottomNavigation type="doctor" active={1} />
       </View>
     )
   }

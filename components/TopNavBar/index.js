@@ -15,7 +15,7 @@ export default class TopNavBar extends React.Component {
 
   _renderHamburger = () => {
     return (
-      <TouchableOpacity style={styles.hamburger} onPress={Actions.drawerOpen}>
+      <TouchableOpacity style={styles.leftIcon} onPress={Actions.drawerOpen}>
         <Image style={{}} source={this.props.drawerImage} />
       </TouchableOpacity>
     )
@@ -23,7 +23,7 @@ export default class TopNavBar extends React.Component {
 
   _renderBack = () => {
     return (
-      <TouchableOpacity style={styles.back} onPress={this.props.onBack}>
+      <TouchableOpacity style={styles.leftIcon} onPress={this.props.onBack}>
         <Image style={{}} source={Back} />
       </TouchableOpacity>
     )
@@ -67,7 +67,7 @@ export default class TopNavBar extends React.Component {
       <View></View>
     )
   }
-  
+
   render() {
     return (
         <LinearGradient
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 17
   },
-  hamburger: {
+  leftIcon: {
     position: 'absolute',
     left: 16,
     bottom: 22 //TODO: Test for iOS and fix
@@ -110,7 +110,4 @@ const styles = StyleSheet.create({
     borderRadius: 36/2,
     marginHorizontal: 8
   },
-  back: {
-
-  }
 })

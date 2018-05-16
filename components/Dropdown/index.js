@@ -65,15 +65,17 @@ export default class Dropdown extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: colors.dark.background,
     borderTopRightRadius: 4,
     borderTopLeftRadius: 4,
   },
   placeholder: {
     backgroundColor: colors.white,
-    padding: 16,
-    flexDirection: 'row'
+    padding: 8,
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   selected: {
     color: colors.lightText,

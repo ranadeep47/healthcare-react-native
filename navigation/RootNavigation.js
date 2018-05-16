@@ -77,14 +77,14 @@ export default class RootNavigator extends React.Component {
            <Stack key="navbar" navBar={TopNavBar}>
              <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
              <Scene key="countries" component={Countries} title="Countries"/>
-             <Scene key="sign_up" component={SignUp} title="Sign Up"/>
-             <Scene key="call_availability" component={CallAvailability} title="Call Availability"/>
-             <Scene key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
+             <Scene back key="sign_up" component={SignUp} title="Sign Up" />
+             <Scene back key="call_availability" component={CallAvailability} title="Sign Up"/>
+             <Scene back key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
+             <Scene back key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
              <Scene key="specialities" component={Specialities} title="Specialities"/>
              <Scene key="preferences" component={Preferences} title="Preferences"/>
              <Scene key="filter_doctors" component={FilterDoctors} title="Filters"/>
-             <Scene key="appointments" title="Appointments" component={Appointments} />
-             <Scene key="chat" component={Chat} back/>
+             <Scene back key="chat" component={Chat} back/>
              <Scene key="select_uploaded_files" component={SelectUploadedFiles} title="Select the files"/>
              <Drawer
               initial
@@ -93,13 +93,13 @@ export default class RootNavigator extends React.Component {
               contentComponent={DrawerContent}
               drawerImage={MenuIcon}
               drawerWidth={0.7 * width}>
+              <Scene key="appointments" title="Appointments" component={Appointments} />
               <Scene key="patient_bookings" title="Bookings" component={PatientBookings} />
               <Scene key="favorite_doctors" component={FavoriteDoctors} title="Favorite Doctors"/>
               <Scene key="chats" component={Chats} title="Chats" />
-              <Scene key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
-              <Scene initial key="doctor_profile" component={DoctorProfile} title="Profile"/>
+              <Scene key="doctor_profile" component={DoctorProfile} title="Profile"/>
               <Scene key="patient_profile" component={PatientProfile} title="Profile"/>
-              <Scene key="misc" component={Misc} title="Misc"/>
+              <Scene initial key="misc" component={Misc} title="Misc"/>
             </Drawer>
            </Stack>
 

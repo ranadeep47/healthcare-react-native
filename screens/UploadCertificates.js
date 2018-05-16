@@ -3,15 +3,20 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TouchableOpacity,
+  ScrollView
 } from 'react-native';
 
 import { LinearGradient } from 'expo'
 import { colors, fontSizes, gradients } from '../constants/styles'
+import LeftArrow from '../assets/images/left_arrow.png'
 
 import Button from '../components/Button'
 import ProgressWizard from '../components/ProgressWizard'
 import ProgressCircle from '../components/ProgressCircle'
+
+import { Actions } from 'react-native-router-flux';
 
 export default class UploadCertificates extends React.Component {
   constructor(props) {
@@ -29,7 +34,7 @@ export default class UploadCertificates extends React.Component {
   };
 
   _onContinue() {
-
+    // Actions.push('quote_loader_lightbox');
   }
 
   _onCancelUpload() {
@@ -45,10 +50,14 @@ export default class UploadCertificates extends React.Component {
           <Text style={styles['title']}>Create a new account</Text>
           <Text style={{color: colors.text, width: 200}}>Create an account with new phone number </Text>
           <View style={{marginTop: 32, flexDirection: 'row', justifyContent: 'center'}}>
-            <ProgressWizard step={2}/>
+            <ProgressWizard step={3}/>
           </View>
         </LinearGradient>
-        <View style={styles['body']}>
+        <ScrollView style={styles['body']}>
+          <TouchableOpacity style={styles.back} onPress={() => {}}>
+            <Image source={LeftArrow} style={{marginRight: 8}}/>
+            <Text style={{color: colors.blue, fontSize: fontSizes['sm']}}>BACK</Text>
+          </TouchableOpacity>
           <Text style={{color: colors.dark.text, marginVertical: 10}}>Upload your certificates</Text>
           <Text style={{color: colors.text}}>
             Your certificates will not be shared with anyone. This is purely for our internal use to verify your identity.
@@ -67,11 +76,10 @@ export default class UploadCertificates extends React.Component {
               <Text style={styles['upload_title']}>Address proof.pdf</Text>
               <ProgressCircle style={{flex: 1}} progress={0.6} onCancel={() => {}} onFinish={() => {}}/>
             </View>
-
           </View>
-        </View>
+        </ScrollView>
         <LinearGradient colors={gradients['whiteGray']} style={styles['bottomCard']}>
-          <Button size='lg'>Continue</Button>
+          <Button size='lg' onPress={this._onContinue}>Continue</Button>
         </LinearGradient>
       </View>
     )
@@ -88,17 +96,18 @@ const styles = StyleSheet.create({
   },
   topCard: {
     paddingHorizontal: 32,
-    paddingTop: 16,
-    flex: 1.5
+    paddingTop: 16
   },
   body:{
-    paddingTop: 40, //TODO
-    flex: 4,
+    paddingTop: 24, //TODO
     paddingHorizontal: 32,
     backgroundColor: colors.white
   },
+  back: {
+    flexDirection: 'row',
+    marginVertical: 8
+  },
   bottomCard: {
-    flex: 0.8,
     paddingHorizontal: 32,
     paddingVertical: 20,
     justifyContent: 'center'

@@ -81,13 +81,13 @@ export default class PhoneVerification extends React.Component {
         <Text style={{color: colors.text, textAlign: 'center', paddingHorizontal: 16}}>
           To keep your account secure, please enter your phone number
         </Text>
-        <TouchableOpacity onPress={this._showCountries} style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginVertical: 24}}>
+        <TouchableOpacity onPress={this._showCountries} style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 32}}>
           <Image style={styles.flag} source={this.state.country.flag} />
           <Text style={{textAlign: 'center'}}>{this.state.country.name}</Text>
           <Image style={{marginLeft: 48}} source={RightArrow} />
         </TouchableOpacity>
-        <View>
-          <Text style={{color: colors.text, marginVertical: 8}}>MOBILE NUMBER</Text>
+        <View style={{marginTop: 16}}>
+          <Text style={styles.label}>MOBILE NUMBER</Text>
           <MobileInput error={this.state.mobileError} onChange={this._onMobileNumberChange} countryCode={this.state.country.code}></MobileInput>
         </View>
         <Button onPress={this._onMobileNumberSubmit} style={{marginVertical: 20}} size='lg'>Enter your phone number</Button>
@@ -102,13 +102,13 @@ export default class PhoneVerification extends React.Component {
         <Text style={{color: colors.text, textAlign: 'center', paddingVertical: 10,paddingHorizontal: 20}}>
           Wait, while we automatically validate your OTP
         </Text>
-        <View style={styles['otpFormContainer']}>
-          <Text style={{color: colors.text}}>ENTER THE OTP</Text>
+        <View style={{marginTop: 48}}>
+          <Text style={styles.label}>ENTER THE OTP</Text>
           <View style={styles['otpFieldsWrapper']}>
-            <TextField style={styles['otpField']} />
-            <TextField style={styles['otpField']} />
-            <TextField style={styles['otpField']} />
-            <TextField style={styles['otpField']} />
+            <TextField inputStyle={styles.otpField} />
+            <TextField inputStyle={styles.otpField} />
+            <TextField inputStyle={styles.otpField} />
+            <TextField inputStyle={styles.otpField} />
           </View>
         </View>
         <Button onPress={this._onOTPSubmit} style={{marginVertical: 20}} size='lg'>Verify OTP</Button>
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   formWrapper: {
     ...StyleSheet.absoluteFillObject,
-    top: 220,
+    top: 260,
     backgroundColor: colors.white,
     marginHorizontal: 30
   },
@@ -167,21 +167,23 @@ const styles = StyleSheet.create({
     color: colors.dark.text,
     marginVertical: 24
   },
+  label: {
+    color: colors.text,
+    marginVertical: 8,
+    fontSize: 13
+  },
   flag: {
     width: 32,
     height: 24,
     marginRight: 16,
     borderRadius: 2
   },
-  otpFormContainer: {
-    marginTop: 80,
-  },
   otpFieldsWrapper: {
-    padding: 10,
+    marginTop: 8,
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
   otpField: {
-    paddingHorizontal: 10
+    paddingHorizontal: 24
   }
 });

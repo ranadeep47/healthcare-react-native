@@ -18,6 +18,8 @@ import GlobeIcon from '../assets/images/globe_icon.png'
 import LocationIcon from '../assets/images/location.png'
 import Heart from '../assets/images/heart.png'
 
+import BottomNavigation from '../components/BottomNavigation'
+
 export default class DoctorDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -82,6 +84,7 @@ export default class DoctorDetail extends React.Component {
             </Button>
           </View>
         </View>
+        <BottomNavigation type="patient" active={0} />
       </View>
     )
   }

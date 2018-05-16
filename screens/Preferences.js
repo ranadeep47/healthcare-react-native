@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Image  
+  Image
 } from 'react-native';
 
 import { LinearGradient } from 'expo'
@@ -13,6 +13,7 @@ import Button from '../components/Button'
 import Checkbox from '../components/Checkbox'
 import TextField from '../components/TextField'
 import Switch from '../components/Switch'
+import Link from '../components/Link'
 
 export default class Preferences extends React.Component {
   constructor(props) {
@@ -64,7 +65,8 @@ export default class Preferences extends React.Component {
           </View>
         </View>
         <LinearGradient colors={gradients['whiteGray']} style={styles['bottomCard']}>
-          <Button size='lg'>Continue</Button>
+          <Button onPress={() => {}} size='lg'>Continue</Button>
+          <Link style={{alignSelf: 'center'}} onPress={() => {}}>Skip now, do it later from profile</Link>
         </LinearGradient>
       </View>
     )
@@ -83,10 +85,9 @@ const styles = StyleSheet.create({
     flex: 4
   },
   bottomCard: {
-    flex: 0.5,
+    flex: 0.6,
     paddingHorizontal: 32,
-    paddingVertical: 20,
-    justifyContent: 'center'
+    paddingVertical: 20
   },
 
 })

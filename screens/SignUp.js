@@ -3,16 +3,24 @@ import {
   StyleSheet,
   Text,
   View,
-  Modal
+  TouchableOpacity,
+  Image,
+  ScrollView,
+  Keyboard
 } from 'react-native';
 
 import { LinearGradient } from 'expo'
 import { colors, fontSizes, gradients } from '../constants/styles'
+import LeftArrow from '../assets/images/left_arrow.png'
+import ProfilePicture from '../assets/images/profile_picture.png'
+
 import Dropdown from '../components/Dropdown'
 import TextField from '../components/TextField'
 import Button from '../components/Button'
-
 import RangeSlider from '../components/RangeSlider'
+import Link from '../components/Link'
+
+import { Actions } from 'react-native-router-flux';
 
 export default class SignUp extends React.Component {
   constructor(props) {
@@ -22,12 +30,17 @@ export default class SignUp extends React.Component {
     }
   }
 
-  static navigationOptions = {
-    //TODO
-  };
-
   _onSubmit = () => {
     this.setState({submitted: true}); //TODO ajax response
+  }
+
+  _onDateOfBirthSelect = () => {
+    Keyboard.dismiss(); //TODO; this is a temporary hack
+    Actions.push('date_picker_lightbox');
+  }
+
+  _onSetProfilePicture = () => {
+
   }
 
   render() {
@@ -53,18 +66,27 @@ export default class SignUp extends React.Component {
           colors={gradients.grayWhite}>
           <Text style={styles['title']}>Create a new account</Text>
           <Text style={styles['subtitle']}>Fill up the following fields to finish signup</Text>
-          </LinearGradient>
-        <View style={styles['form']}>
+        </LinearGradient>
+        <ScrollView style={styles['form']}>
+          <TouchableOpacity style={styles.back} onPress={() => {}}>
+            <Image source={LeftArrow} style={{marginRight: 8}}/>
+            <Text style={{color: colors.blue, fontSize: fontSizes['sm']}}>BACK</Text>
+          </TouchableOpacity>
           <View style={styles['formItem']}>
             <Text style={styles['label']}>BLOOD GROUP</Text>
             <Dropdown title={'bloodgroup'} list={bloodGroups} onSelect={(obj,i) => console.log(obj, i)}></Dropdown>
           </View>
           <View style={styles['formItem']}>
-            <Text style={styles['label']}>RESIDENTIAL ADDRESS</Text>
-            <TextField placeholder='Enter your address'></TextField>
+            <TextField placeholder='Enter your address' label="RESIDENTIAL ADDRESS"></TextField>
           </View>
-
-        </View>
+          <View style={styles['formItem']}>
+            <TextField inputProps={{onFocus: this._onDateOfBirthSelect}} placeholder='Select your DOB' label="DATE OF BIRTH"></TextField>
+          </View>
+          <View style={[styles['formItem'], {flexDirection: 'row', alignItems: 'center'}]}>
+            <Image source={ProfilePicture} style={{marginRight: 8}}/>
+            <Link onPress={this._onSetProfilePicture}>Set a profile picture</Link>
+          </View>
+        </ScrollView>
         <LinearGradient
          style={styles['bottomCard']}
          colors={gradients.whiteGray}>
@@ -86,7 +108,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white
   },
   title: {
-    fontSize: fontSizes['lg'],
+    fontSize: 20,
+    color: colors.dark.text,
     marginVertical: 4
   },
   subtitle: {
@@ -94,18 +117,18 @@ const styles = StyleSheet.create({
     marginVertical: 4
   },
   headerCard: {
-    flex: 1,
-    paddingTop: 32,
-    paddingHorizontal: 24
+    paddingHorizontal: 24,
+    paddingVertical: 22
+  },
+  back: {
+    flexDirection: 'row',
+    marginBottom: 8
   },
   form: {
-    flex: 5,
     paddingHorizontal: 24
   },
   bottomCard: {
-    flex: 0.8,
-    paddingHorizontal: 24,
-    paddingVertical: 20,
+    padding: 24,
     justifyContent: 'center'
   },
   formItem: {
@@ -113,7 +136,8 @@ const styles = StyleSheet.create({
   },
   label: {
     paddingVertical: 4,
-    color: colors.text
+    color: colors.text,
+    fontSize: 13
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,

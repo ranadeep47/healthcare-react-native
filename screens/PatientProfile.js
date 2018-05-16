@@ -18,6 +18,10 @@ export default class PatientProfile extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    Actions.push('patient_confirm_pay');
+  }
+
   render() {
     return (
       <Text>Hello World</Text>

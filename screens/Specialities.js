@@ -40,7 +40,7 @@ export default class Specialities extends React.Component {
         return (
           <TouchableOpacity onPress={(e) => _this._onSelect(this.item)}>
             <View style={styles['row']}>
-                <Text style={styles['name']}>{item}</Text>
+                <Text style={styles.name}>{item}</Text>
             </View>
           </TouchableOpacity>
         )
@@ -49,8 +49,8 @@ export default class Specialities extends React.Component {
 
   _renderSectionHeader({section: {title}}) {
     return (
-      <View style={styles['section']}>
-        <Text>{title}</Text>
+      <View style={styles.section}>
+        <Text style={{color: colors.text}}>{title}</Text>
       </View>
     )
   }
@@ -85,20 +85,21 @@ const styles = StyleSheet.create({
     flex: 1 //Setting flex:1 in here and in the container of <SearchList is required to display the whole list
   },
   section: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 16,
     paddingVertical: 20,
     backgroundColor: colors.background
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    paddingHorizontal: 10,
+    alignItems: 'center',
+    paddingHorizontal: 16,
     paddingVertical: 20,
     borderBottomWidth: 1,
     borderColor: colors.dark.background,
     backgroundColor: colors.white
   },
   name: {
-
+    color: colors.dark.text
   }
 })

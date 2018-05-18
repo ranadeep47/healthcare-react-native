@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' ? 64 : 54 + Constants.statusBarHeight,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight,
+    paddingTop: Platform.OS === 'ios' ? 10 : Constants.statusBarHeight,
     paddingHorizontal: 16
   },
   center: {

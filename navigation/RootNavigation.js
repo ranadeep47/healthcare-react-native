@@ -30,15 +30,13 @@ import DoctorDetail from '../screens/DoctorDetail';
 import FilterDoctors from '../screens/FilterDoctors';
 
 import Appointments from '../screens/Appointments'
-import UpcomingAppointments from '../screens/Appointments/UpcomingAppointments'
-import PastAppointments from '../screens/Appointments/PastAppointments'
-import AppointmentRequests from '../screens/Appointments/AppointmentRequests'
-
 import SelectUploadedFiles from '../screens/SelectUploadedFiles'
 import Chat from '../screens/Chat'
 import Chats from '../screens/Chats'
 import FavoriteDoctors from '../screens/FavoriteDoctors'
 import Cardreader from '../screens/Cardreader'
+import PhotoCrop from '../screens/PhotoCrop'
+import VideoCall from '../screens/VideoCall'
 import IncomingCall from '../screens/IncomingCall'
 import CallFeedback from '../screens/CallFeedback'
 import PatientBookings from '../screens/Bookings'
@@ -76,8 +74,8 @@ export default class RootNavigator extends React.Component {
          <Stack key="root" hideNavBar>
            <Stack key="navbar" navBar={TopNavBar}>
              <Scene key="sample_screen" component={SampleScreen} title="Sample Screen" />
-             <Scene key="countries" component={Countries} title="Countries"/>
              <Scene back key="sign_up" component={SignUp} title="Sign Up" />
+             <Scene key="countries" component={Countries} title="Countries"/>
              <Scene back key="call_availability" component={CallAvailability} title="Sign Up"/>
              <Scene back key="upload_certificates" component={UploadCertificates} title="Upload Certificates"/>
              <Scene back key="doctor_detail" component={DoctorDetail} title="Doctor Detail"/>
@@ -87,7 +85,6 @@ export default class RootNavigator extends React.Component {
              <Scene back key="chat" component={Chat} back/>
              <Scene key="select_uploaded_files" component={SelectUploadedFiles} title="Select the files"/>
              <Drawer
-              initial
               hideNavBar
               key="drawer"
               contentComponent={DrawerContent}
@@ -99,7 +96,7 @@ export default class RootNavigator extends React.Component {
               <Scene key="chats" component={Chats} title="Chats" />
               <Scene key="doctor_profile" component={DoctorProfile} title="Profile"/>
               <Scene key="patient_profile" component={PatientProfile} title="Profile"/>
-              <Scene initial key="misc" component={Misc} title="Misc"/>
+              <Scene key="misc" component={Misc} title="Misc"/>
             </Drawer>
            </Stack>
 
@@ -107,6 +104,8 @@ export default class RootNavigator extends React.Component {
            <Scene key="call_feedback" component={CallFeedback} />
            <Scene key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
            <Scene key="card_reader" component={Cardreader} hideNavBar/>
+           <Scene key="photo_crop" component={PhotoCrop} hideNavBar/>
+           <Scene initial key="video_call" component={VideoCall} hideNavBar/>
 
          </Stack>
          <Scene key="schedule_picker_lightbox" component={SchedulePicker} />

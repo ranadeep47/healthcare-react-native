@@ -39,10 +39,15 @@ export default class ProgressCircle extends React.Component{
   render() {
     let Button = null;
     if(this.state.progress === 1) Button = <Tickmark style={styles['icon']}/>
-    else Button = <TouchableOpacity style={styles['icon']} onPress={this._onCancel.bind(this)}><Close /></TouchableOpacity>
+    else Button = <TouchableOpacity style={styles['icon']} onPress={this._onCancel.bind(this)}><Close fill={colors.white}/></TouchableOpacity>
     return (
       <View>
-        <Progress.Circle borderWidth={0} size={36} progress={this.state.progress} unfilledColor={colors.lightBlue} color={colors.blue}>
+        <Progress.Circle
+          borderWidth={0}
+          size={this.props.size || 36}
+          progress={this.state.progress}
+          unfilledColor={this.props.unfilledColor || colors.lightBlue}
+          color={this.props.color || colors.blue}>
           {Button}
         </Progress.Circle>
       </View>

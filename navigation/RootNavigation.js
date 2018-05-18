@@ -85,6 +85,7 @@ export default class RootNavigator extends React.Component {
              <Scene back key="chat" component={Chat} back/>
              <Scene key="select_uploaded_files" component={SelectUploadedFiles} title="Select the files"/>
              <Drawer
+              initial
               hideNavBar
               key="drawer"
               contentComponent={DrawerContent}
@@ -96,7 +97,7 @@ export default class RootNavigator extends React.Component {
               <Scene key="chats" component={Chats} title="Chats" />
               <Scene key="doctor_profile" component={DoctorProfile} title="Profile"/>
               <Scene key="patient_profile" component={PatientProfile} title="Profile"/>
-              <Scene key="misc" component={Misc} title="Misc"/>
+              <Scene initial key="misc" component={Misc} title="Misc"/>
             </Drawer>
            </Stack>
 
@@ -105,7 +106,7 @@ export default class RootNavigator extends React.Component {
            <Scene key="phone_verification" component={PhoneVerification} title="Phone Verification"/>
            <Scene key="card_reader" component={Cardreader} hideNavBar/>
            <Scene key="photo_crop" component={PhotoCrop} hideNavBar/>
-           <Scene initial key="video_call" component={VideoCall} hideNavBar/>
+           <Scene key="video_call" component={VideoCall} hideNavBar/>
 
          </Stack>
          <Scene key="schedule_picker_lightbox" component={SchedulePicker} />

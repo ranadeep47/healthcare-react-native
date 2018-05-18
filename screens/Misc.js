@@ -15,6 +15,7 @@ import LeftArrow from '../assets/images/left_arrow.png'
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import TextField from '../components/TextField'
 import BottomNavigation from '../components/BottomNavigation'
+import FileUploadMessage from '../components/FileUploadMessage'
 
 export default class Misc extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class Misc extends React.Component {
   render() {
     return (
       <View style={styles['container']}>
-
+        <FileUploadMessage style={{marginVertical: 32}}/>
         <TouchableOpacity style={styles.back} onPress={() => {}}>
           <Image source={LeftArrow} style={{marginRight: 8}}/>
           <Text style={{color: colors.blue, fontSize: fontSizes['sm']}}>BACK</Text>
@@ -59,7 +60,6 @@ export default class Misc extends React.Component {
             step={1}
             snapped/>
         </View>
-
         <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 1}}>
           <TextField
             label="FIRST NAME"
@@ -72,7 +72,6 @@ export default class Misc extends React.Component {
             inputStyle={{}}
             placeholder="Last name"/>
         </View>
-
         <BottomNavigation type="patient" active={0} />
       </View>
     )

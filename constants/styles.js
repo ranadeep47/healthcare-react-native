@@ -10,6 +10,7 @@ export const colors = {
   lightBackground: 'rgb(253,254,254)',
   greenBlue: 'rgb(0,210,131)',
   green: 'rgb(7,206,135)',
+  lightGreen: 'rgb(234,255,240)',
   blue: 'rgb(6,179,162)',
   lightBlue: 'rgba(6,179,162,0.3)',
   overlay: 'rgba(59,72,89,0.8)',

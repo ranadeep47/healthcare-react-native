@@ -40,7 +40,7 @@ export default class App extends React.Component {
       Asset.loadAsync(getAssets()),
       Font.loadAsync({
         'circularstd-book': require('./assets/fonts/circularstd-book-webfont.ttf'),
-        'circularstd-medium': require('./assets/fonts/circularstd-medium-webfont.ttf')
+        'circularstd-medium': require('./assets/fonts/circularstd-medium-webfont.ttf')        
       }),
     ]);
   };

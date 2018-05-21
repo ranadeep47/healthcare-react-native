@@ -43,6 +43,7 @@ import PatientBookings from '../screens/Bookings'
 import DoctorProfile from '../screens/DoctorProfile'
 import PatientProfile from '../screens/PatientProfile'
 import Misc from '../screens/Misc'
+import DoctorSpecialities from '../screens/DoctorSpecialities'
 
 import DrawerContent from '../components/DrawerContent'
 
@@ -97,7 +98,8 @@ export default class RootNavigator extends React.Component {
               <Scene key="chats" component={Chats} title="Chats" />
               <Scene key="doctor_profile" component={DoctorProfile} title="Profile"/>
               <Scene key="patient_profile" component={PatientProfile} title="Profile"/>
-              <Scene initial key="misc" component={Misc} title="Misc"/>
+              <Scene key="misc" component={Misc} title="Misc"/>
+              <Scene initial key="doctor_specialities" component={DoctorSpecialities} title="Choose speciality"/>
             </Drawer>
            </Stack>
 
